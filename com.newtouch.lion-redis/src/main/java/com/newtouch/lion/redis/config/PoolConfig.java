@@ -305,5 +305,4 @@ public class PoolConfig {
     public void setLifo(String lifo) {
         this.lifo = lifo;
     }
-
 }
