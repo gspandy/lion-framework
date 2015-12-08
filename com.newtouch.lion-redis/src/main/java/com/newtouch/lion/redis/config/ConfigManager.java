@@ -1,8 +1,12 @@
 package com.newtouch.lion.redis.config;
 
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import redis.clients.jedis.JedisPoolConfig;
+
+import java.util.List;
 
 /**
  * <p>
@@ -113,10 +117,10 @@ public class ConfigManager {
      *
      * 功能描述：设置配置文件
      *
-     * @param cfg 参数说明 返回值: 类型 <说明>
+     * @param config 参数说明 返回值: 类型 <说明>
      */
     public synchronized void setConfig(String config) {
-        this.config = cfg;
+        this.config = config;
     }
 
 
@@ -138,7 +142,7 @@ public class ConfigManager {
      * @param minEvictableIdleTimeMillis 参数说明 返回值: 类型 <说明>
      * @param softMinEvictableIdleTimeMillis 参数说明 返回值: 类型 <说明>
      */
-    private void setTestParameters(JedisPoolConfig  config, String whenExhaustedAction, String testOnBorrow, String testOnReturn,
+    private void setTestParameters(JedisPoolConfig config, String whenExhaustedAction, String testOnBorrow, String testOnReturn,
                                    String testWhileIdle, String timeBetweenEvictionRunsMillis, String numTestsPerEvictionRun,
                                    String minEvictableIdleTimeMillis, String softMinEvictableIdleTimeMillis) {
 

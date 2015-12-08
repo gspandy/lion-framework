@@ -1,7 +1,5 @@
 package com.newtouch.lion.redis;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-
 /**
  * <p>
  * Title:
@@ -36,6 +34,13 @@ public class TestMain {
     }
 
     public static void main(String[] args) {
+
+
+        String city="city";
+
+
+        System.out.println("args = [" + args + "]");
+        System.out.println("city = " + city);
 
 
     }
@@ -76,13 +81,7 @@ public class TestMain {
         return age;
     }
 
-    @Override
-    public String toString() {
-        return "TestMain{" +
-                "name='" + name + '\'' +
-                ", age='" + age + '\'' +
-                '}';
-    }
+
 
 
 
