@@ -1,5 +1,6 @@
 package com.newtouch.lion.redis.shard;
 
+import org.apache.commons.lang3.ObjectUtils;
 import redis.clients.jedis.JedisPoolConfig;
 
 /**
@@ -180,5 +181,47 @@ public class NodeInfoJedis {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    /**
+     * 获取hashcode
+     *
+     * @return int hashcode
+     */
+    @SuppressWarnings("deprecation")
+    @Override
+    public int hashCode() {
+        return ObjectUtils.hashCodeMulti(ip, port, dbIndex);
+    }
+
+    /**
+     * 节点比较
+     *
+     * @param obj 比较对象
+     * @return boolean 比较结果
+     */
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof NodeInfoJedis) {
+            NodeInfoJedis that = (NodeInfoJedis) obj;
+            return ObjectUtils.equals(ip, that.ip) && ObjectUtils.equals(port, that.port)
+                    && ObjectUtils.equals(dbIndex, that.dbIndex);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     *
+     * toString
+     *
+     * @return String ip + port + password + dbIndex + timeOut + config
+     */
+    @Override
+    public String toString() {
+        return "NodeInfo4Jedis [ip=" + ip + ", port=" + port + ", password=" + password + ", dbIndex=" + dbIndex
+                + ", timeOut=" + timeOut + ", config=" + config + "]";
     }
 }

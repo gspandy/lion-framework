@@ -35,9 +35,9 @@ import java.util.concurrent.TimeUnit;
  * @version 1.0
  *          2015-12-09 11:13.
  */
-public class ShardHanlder {
+public class ShardHandler {
     /**日志*/
-    private static final Logger logger= LoggerFactory.getLogger(ShardHanlder.class);
+    private static final Logger logger= LoggerFactory.getLogger(ShardHandler.class);
     /**标记同一shard另一节点是否可用的key*/
     private static  final  String REDIS_UNAVAILABLE_SIGN = "REDIS_UNAVAILABLE_SIGN";
 
@@ -68,7 +68,7 @@ public class ShardHanlder {
      * @param pools 连接池
      * @param shardInfoJedis 分片信息
      */
-    public ShardHanlder(List<DefaultJedisPool> pools, ShardInfoJedis shardInfoJedis) {
+    public ShardHandler(List<DefaultJedisPool> pools, ShardInfoJedis shardInfoJedis) {
         super();
         if(!CollectionUtils.isEmpty(pools)){
             this.pools.addAll(pools);

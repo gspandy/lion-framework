@@ -26,14 +26,7 @@
             <scope>test</scope>
         </dependency>
         <!-- Test jar end -->
-        <dependency>
-            <groupId>com.newtouch.lion</groupId>
-            <artifactId>com.newtouch.lion-exception</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.newtouch.lion</groupId>
-            <artifactId>com.newtouch.lion-common</artifactId>
-        </dependency>
+
         <!-- Logger Start -->
         <dependency>
             <groupId>org.slf4j</groupId>
