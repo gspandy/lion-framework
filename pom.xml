@@ -15,6 +15,7 @@
         <module>com.newtouch.lion-shiro</module>
         <module>com.newtouch.lion-webcore</module>
         <module>com.newtouch.lion-rpc</module>
+        <module>com.newtouch.lion-exception</module>
     </modules>
     <name>com.newtouch.lion</name>
     <url>http:/lion.newtouch.com</url>

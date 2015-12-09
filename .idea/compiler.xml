@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="com.newtouch.lion-common" />
         <module name="com.newtouch.lion-core" />
+        <module name="com.newtouch.lion-exception" />
         <module name="com.newtouch.lion-redis" />
         <module name="com.newtouch.lion-rpc" />
         <module name="com.newtouch.lion-shiro" />
@@ -31,6 +32,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.newtouch.lion-core" target="1.7" />
+      <module name="com.newtouch.lion-exception" target="1.7" />
       <module name="com.newtouch.lion-redis" target="1.7" />
       <module name="com.newtouch.lion-rpc" target="1.7" />
     </bytecodeTargetLevel>

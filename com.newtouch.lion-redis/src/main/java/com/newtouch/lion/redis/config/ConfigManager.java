@@ -1,6 +1,7 @@
 package com.newtouch.lion.redis.config;
 
 
+import com.newtouch.lion.redis.shard.ShardInfoJedis;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,7 +65,7 @@ public class ConfigManager {
     /**
      * lstInfo4Jedis
      */
-    protected List<ShardInfo4Jedis> lstInfo4Jedis;
+    protected List<ShardInfoJedis> lstInfo4Jedis;
 
     /**
      * config
@@ -98,7 +99,7 @@ public class ConfigManager {
      *
      * @return List<ShardInfo4Jedis> 分片的Redis节点信息列表
      */
-    public List<ShardInfo4Jedis> getLstInfo4Jedis() {
+    public List<ShardInfoJedis> getLstInfo4Jedis() {
         return lstInfo4Jedis;
     }
 
