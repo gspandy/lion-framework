@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<context:component-scan base-package="com.newtouch.lion" />
+	<!-- 加载接口配置文件 -->
+	<context:property-placeholder 
+		local-override="false" 
+		file-encoding="UTF-8" 
+		location="classpath:application-redis.properties"/>
+   
+    <!-- 配置redis连接池信息 -->
+	<bean id="poolConfig" class="com.newtouch.lion.redis.config.PoolConfig">
+		<property name="maxIdle" value="${redis.maxIdle}" />
+		<property name="minIdle" value="${redis.mixIdle}" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="testWhileIdle" value="true" />
+		<!--
+	     <property name="maxActive" value=""/>
+	     <property name="maxWait" value=""/>
+	     <property name="whenExhaustedAction" value=""/>
+	     <property name="testOnBorrow" value=""/>
+	     <property name="testOnReturn" value=""/>
+	     <property name="testWhileIdle" value="" />
+	     <property name="timeBetweenEvictionRunsMillis" value=""/>
+	     <property name="numTestsPerEvictionRun" value=""/>
+	     <property name="minEvictableIdleTimeMillis" value=""/>
+	     <property name="softMinEvictableIdleTimeMillis" value=""/>
+	     <property name="lifo" value=""/>
+	     -->
+	</bean>
+	<!-- 配置server信息 -->
+	<bean id="server1" class="com.newtouch.lion.redis.shard.NodeInfoJedis">
+		<property name="ip" value="${redis.host}" />
+		<property name="port" value="${redis.port}" />
+		<property name="password" value="" />
+		<property name="timeOut" value="${redis.timeout}" />
+		<property name="dbIndex" value="${redis.default.db}"/>
+	</bean>
+ 
+	<!-- 配置shard信息 -->
+	<bean id="shard1" class="com.newtouch.lion.redis.shard.ShardInfoJedis">
+		<property name="shardName" value="shard1" />
+		<property name="nodes">
+			<set>
+				<ref bean="server1" />
+			</set>
+		</property>
+	</bean>
+	<!-- 配置shard组合信息 -->
+	<bean id="shardConfig" class="com.newtouch.lion.redis.shard.ShardConfig">
+		<property name="shardConfigName" value="config1" />
+		<property name="shards">
+			<list>
+				<ref bean="shard1" />
+			</list>
+		</property>
+	</bean>
+	<bean id="configManagerSpring" class="com.newtouch.lion.redis.config.ConfigManagerSpring">
+		<property name="poolConfig" ref="poolConfig" />
+		<property name="shardConfig" ref="shardConfig" />
+	</bean>
+	<bean id="redisClient" class="com.newtouch.lion.redis.client.impl.spring.SpringRedisClientImpl" init-method="init">
+		<property name="configManagerSpring" ref="configManagerSpring" />
+	</bean>
+</beans>

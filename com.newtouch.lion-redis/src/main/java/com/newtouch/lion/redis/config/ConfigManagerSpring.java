@@ -110,10 +110,10 @@ public class ConfigManagerSpring extends ConfigManager {
     /**
      * 获取分片的Redis节点列表信息
      * 
-     * @return List<ShardInfo4Jedis> 分片的Redis节点列表信息
+     * @return List<ShardInfoJedis> 分片的Redis节点列表信息
      */
-    public List<ShardInfoJedis> getLstInfo4Jedis() {
-        return lstInfo4Jedis;
+    public List<ShardInfoJedis> getLstInfoJedis() {
+        return this.lstInfoJedis;
     }
 
     /**
@@ -142,17 +142,17 @@ public class ConfigManagerSpring extends ConfigManager {
      * @param shardConfig 参数说明 返回值: 类型 <说明>
      */
     private void parseShardingConfig(ShardConfig shardConfig) {
-        lstInfo4Jedis = new ArrayList<ShardInfoJedis>();
+        lstInfoJedis = new ArrayList<ShardInfoJedis>();
         JedisPoolConfig config = new JedisPoolConfig();
         setPoolParameters(poolConfig, config);
         shardConfig.setConfig(config);
         for (ShardInfoJedis shardInfo : shardConfig.getShards()) {
-            lstInfo4Jedis.add(shardInfo);
+            lstInfoJedis.add(shardInfo);
             for (NodeInfoJedis node : shardInfo.getNodes()) {
                 node.setConfig(shardConfig.getConfig());
             }
         }
-        isSharding = lstInfo4Jedis.size() > 1 ? true : false;
+        isSharding = lstInfoJedis.size() > 1 ? true : false;
     }
 
     /**
