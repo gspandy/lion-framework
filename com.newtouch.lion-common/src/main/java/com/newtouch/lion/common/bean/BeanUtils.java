@@ -56,8 +56,7 @@ public class BeanUtils {
 
         BeanInfo beanInfo = Introspector.getBeanInfo(type);
 
-        PropertyDescriptor[] propertyDescriptors = beanInfo
-                .getPropertyDescriptors();
+        PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
 
         for (int i = 0; i < propertyDescriptors.length; i++) {
             PropertyDescriptor descriptor = propertyDescriptors[i];
@@ -122,9 +121,9 @@ public class BeanUtils {
      * @param Object bean
      * @return Map<String,Object>
      */
-    public static Map<String, Object> convertBeanToMap(Object bean) {
+    public static Map<String,Object> convertBeanToMap(Object bean) {
 
-        Map<String, Object> returnMap = new HashMap<String, Object>();
+        Map<String, Object> returnMap = new HashMap<String,Object>();
 
         PropertyDescriptor[] propertyDescriptors = BeanUtils.getPropertyDescriptors(bean);
 
