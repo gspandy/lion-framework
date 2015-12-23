@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bizlogs>
+	<bizlog>
+		<logTemplateKey></logTemplateKey>
+		<appName></appName>
+		<moduleName></moduleName>
+		<actionType></actionType>
+		<shortMessage></shortMessage>
+		<tcRecTypeId></tcRecTypeId>
+		<tcSubRecTypeId></tcSubRecTypeId>
+	</bizlog>
+</bizlogs>

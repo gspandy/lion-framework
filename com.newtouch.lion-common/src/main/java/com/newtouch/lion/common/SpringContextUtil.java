@@ -31,8 +31,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 		return applicationContext.getBean(name);
 	}
 
-	public static Object getBean(String name, Class<?> requiredType)
-			throws BeansException {
+	public static Object getBean(String name, Class<?> requiredType) throws BeansException {
 		return applicationContext.getBean(name, requiredType);
 	}
 
@@ -40,20 +39,17 @@ public class SpringContextUtil implements ApplicationContextAware {
 		return applicationContext.containsBean(name);
 	}
 
-	public static boolean isSingleton(String name)
-			throws NoSuchBeanDefinitionException {
+	public static boolean isSingleton(String name) throws NoSuchBeanDefinitionException {
 		return applicationContext.isSingleton(name);
 	}
 	
 	 
 	
-	public static Class<?> getType(String name)
-			throws NoSuchBeanDefinitionException {
+	public static Class<?> getType(String name) throws NoSuchBeanDefinitionException {
 		return applicationContext.getType(name);
 	}
 
-	public static String[] getAliases(String name)
-			throws NoSuchBeanDefinitionException {
+	public static String[] getAliases(String name) throws NoSuchBeanDefinitionException {
 		return applicationContext.getAliases(name);
 	}
 }

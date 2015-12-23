@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bizlogs>
+	<bizlog>
+		<logTemplateKey>sys.adduser</logTemplateKey>
+		<appName>系统</appName>
+		<moduleName>用户管理</moduleName>
+		<actionType>增加用户</actionType>
+		<shortMessage>增加用户{0},{1}</shortMessage>
+		<recType className="TsUser"/>
+		<subRecType className="TsUser"/>
+	</bizlog>
+</bizlogs>

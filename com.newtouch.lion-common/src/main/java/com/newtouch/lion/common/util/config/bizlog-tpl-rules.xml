@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<digester-rules>
+	<pattern value="bizlogs/bizlog">
+		<object-create-rule classname="itaf.framework.log.model.TlSysBusinessLog"/>
+		<set-next-rule methodname="add"/>
+		<set-properties-rule/>
+		<bean-property-setter-rule pattern="logTemplateKey"/>
+		<bean-property-setter-rule pattern="appName"/>
+		<bean-property-setter-rule pattern="moduleName"/>
+		<bean-property-setter-rule pattern="actionType"/>
+		<bean-property-setter-rule pattern="shortMessage"/>
+		<bean-property-setter-rule pattern="tcRecTypeId"/>
+		<bean-property-setter-rule pattern="tcSubRecTypeId"/>
+		<pattern value="recType">
+			<factory-create-rule classname="itaf.framework.log.util.RecTypeFactory"/>
+			<set-next-rule methodname="setTcRecTypeId" paramtype="java.lang.Long"/>
+		</pattern>
+		<pattern value="subRecType">
+			<factory-create-rule classname="itaf.framework.log.util.RecTypeFactory"/>
+			<set-next-rule methodname="setTcSubRecTypeId" paramtype="java.lang.Long"/>
+		</pattern>
+	</pattern>
+</digester-rules>
