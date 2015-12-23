@@ -65,7 +65,7 @@ public class ConfigManager {
     /**
      * lstInfo4Jedis
      */
-    protected List<ShardInfoJedis> lstInfo4Jedis;
+    protected List<ShardInfoJedis> lstInfoJedis;
 
     /**
      * config
@@ -99,8 +99,8 @@ public class ConfigManager {
      *
      * @return List<ShardInfo4Jedis> 分片的Redis节点信息列表
      */
-    public List<ShardInfoJedis> getLstInfo4Jedis() {
-        return lstInfo4Jedis;
+    public List<ShardInfoJedis> getLstInfoJedis() {
+        return lstInfoJedis;
     }
 
     /**
