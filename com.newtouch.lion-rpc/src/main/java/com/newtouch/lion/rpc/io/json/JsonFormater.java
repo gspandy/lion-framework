@@ -1,6 +1,7 @@
 package com.newtouch.lion.rpc.io.json;
 
 import com.newtouch.lion.rpc.io.Formatter;
+import com.newtouch.lion.rpc.io.Request;
 
 /**
  * <p>
@@ -31,7 +32,7 @@ public class JsonFormater implements Formatter {
      */
     @Override
     public <T> String reqFormat(Class<T> clazz, String method, Object param) {
-        Request request = new Request(clazz, Smethod, param);
+        Request request = new Request(clazz, method, param);
        // return JSON.toString(request);
         return null;
     }
