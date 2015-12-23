@@ -6,6 +6,10 @@
  */
 package com.newtouch.lion.common.bean;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
