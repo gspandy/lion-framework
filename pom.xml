@@ -22,5 +22,6 @@
         <module>com.newtouch.lion-webcore</module>
         <module>com.newtouch.lion-rpc</module>
         <module>com.newtouch.lion-exception</module>
+        <module>com.newtouch.lion-dsession</module>
     </modules>
 </project>

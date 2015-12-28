@@ -10,3 +10,4 @@ com.newtouch.lion-redis  Redis缓存
 com.newtouch.lion-rpc    基于Http RPC调整示例
 com.newtouch.lion-shiro   对shiro权限扩展
 com.newtouch.lion-webcore  web框架的管理
+com.newtouch.lion-dsession 基于Redis分布式会话模块
