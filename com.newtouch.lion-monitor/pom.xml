@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>com.newtouch.lion-parent</artifactId>
+        <groupId>com.newtouch.lion</groupId>
+        <version>1.5</version>
+        <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>com.newtouch.lion-monitor</artifactId>
+    <version>1.5</version>
+    <name>com.newetouch.lion-monitor</name>
+    <url>http://lion.newtouch.com</url>
+    <dependencies>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+            <artifactId>com.newtouch.lion-core</artifactId>
+        </dependency>
+    </dependencies>
+</project>
