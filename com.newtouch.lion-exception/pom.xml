@@ -3,15 +3,14 @@
     <parent>
         <groupId>com.newtouch.lion</groupId>
         <artifactId>com.newtouch.lion-parent</artifactId>
-        <version>1.1</version>
+        <version>1.5</version>
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-exception</artifactId>
     <packaging>jar</packaging>
-
-    <name>com.newtouch.lion-exception</name>
+    <name>lion-exception</name>
     <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

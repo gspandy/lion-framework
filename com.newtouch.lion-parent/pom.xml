@@ -5,33 +5,27 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-parent</artifactId>
-    <version>1.3</version>
+    <version>1.5</version>
     <name>com.newtouch.lion-parent</name>
     <packaging>pom</packaging>
     <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
-        <lion-parent.version>1.1</lion-parent.version>
-        <lion-core.version>1.1</lion-core.version>
-        <lion-adpater.version>1.1</lion-adpater.version>
-        <lion-im.version>1.1</lion-im.version>
-        <lion-webcore.version>1.1</lion-webcore.version>
-        <lion-cache.version>1.1</lion-cache.version>
-        <lion-shiro.version>1.1</lion-shiro.version>
-        <lion-web.version>1.1</lion-web.version>
-        <lion-angularweb.version>1.1</lion-angularweb.version>
-        <lion-webadmin.version>1.1</lion-webadmin.version>
-        <lion-api.version>1.1</lion-api.version>
-        <lion-service.version>1.1</lion-service.version>
-        <lion-data.version>1.1</lion-data.version>
-        <lion-common.version>1.1</lion-common.version>
-        <lion-redis.version>1.1</lion-redis.version>
-        <lion-mongodb.version>1.1</lion-mongodb.version>
-        <lion-exception.version>1.1</lion-exception.version>
-        <lion-trans.version>1.1</lion-trans.version>
-        <lion-monitor.version>1.1</lion-monitor.version>
-        <lion-zookeeper.version>1.1</lion-zookeeper.version>
+        <lion-parent.version>1.5</lion-parent.version>
+        <lion-core.version>1.5</lion-core.version>
+        <lion-adpater.version>1.5</lion-adpater.version>
+        <lion-shiro.version>1.5</lion-shiro.version>
+        <lion-service.version>1.5</lion-service.version>
+        <lion-common.version>1.5</lion-common.version>
+        <lion-redis.version>1.5</lion-redis.version>
+        <lion-mongodb.version>1.5</lion-mongodb.version>
+        <lion-exception.version>1.5</lion-exception.version>
+        <lion-trans.version>1.5</lion-trans.version>
+        <lion-monitor.version>1.5</lion-monitor.version>
+        <lion-zookeeper.version>1.5</lion-zookeeper.version>
+        <lion-webcore.version>1.5</lion-webcore.version>
+        <lion-cache.version>1.5</lion-cache.version>
         <junit.version>4.8.2</junit.version>
         <slf4j.version>1.7.1</slf4j.version>
         <poi.version>3.9</poi.version>
@@ -57,6 +51,7 @@
         <fastjson.version>1.2.3</fastjson.version>
         <gson.version>2.2.4</gson.version>
         <jackson-core.version>2.4.4</jackson-core.version>
+        <quartz.version>2.2.1</quartz.version>
         <shiro.version>1.2.3</shiro.version>
         <freemarker.version>2.3.20</freemarker.version>
         <jsp-api.version>2.0</jsp-api.version>
@@ -76,6 +71,7 @@
         <mybatis.version>3.2.1</mybatis.version>
         <mybatis-spring.version>1.2.0</mybatis-spring.version>
         <hessian.version>4.0.38</hessian.version>
+        <c3p0.version>0.9.1.2</c3p0.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -125,11 +121,6 @@
                 <groupId>com.newtouch.lion</groupId>
                 <artifactId>com.newtouch.lion-im</artifactId>
                 <version>${lion-im.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-service</artifactId>
-                <version>${lion-service.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.newtouch.lion</groupId>
@@ -222,6 +213,17 @@
             <!-- Logger End -->
 
             <!-- Apache Shiro Start -->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>${quartz.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>c3p0</groupId>
+                        <artifactId>c3p0</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>

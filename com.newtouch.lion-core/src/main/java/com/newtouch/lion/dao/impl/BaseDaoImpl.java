@@ -137,7 +137,7 @@ public abstract class BaseDaoImpl<T extends BaseEntity<PK>, PK> implements BaseD
 	 * 
 	 * @see com.lion.framework.dao.BaseDao#findByIdNoWaitLock(java.lang.Long)
 	 */
-	@Override
+
 	public T findByIdNoWaitLock(PK id) {
 		return ((T) this.entityManager.find(this.entityClass, id,LockModeType.PESSIMISTIC_READ));
 	}

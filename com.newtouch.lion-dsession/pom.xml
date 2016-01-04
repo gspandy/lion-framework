@@ -7,17 +7,14 @@
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-dsession</artifactId>
     <packaging>jar</packaging>
-
     <name>com.newtouch.lion-dsession</name>
     <url>http://maven.apache.org</url>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

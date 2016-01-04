@@ -3,13 +3,113 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>com.newtouch.lion</artifactId>
         <groupId>com.newtouch.lion</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <artifactId>com.newtouch.lion-parent</artifactId>
+        <version>1.5</version>
+        <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-shiro</artifactId>
-
+    <version>1.5</version>
+    <url>http://one.newtouch.com</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <c3p0.version>0.9.1.2</c3p0.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+           <artifactId>com.newtouch.lion-common</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+            <artifactId>com.newtouch.lion-exception</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+            <artifactId>com.newtouch.lion-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+            <artifactId>com.newtouch.lion-common</artifactId>
+        </dependency>
+        <!-- Servlet&&JSP Start -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Servlet&&JSP End -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
+        <!-- Apache Shiro Start -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-aspectj</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-cas</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-guice</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-quartz</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId> org.opensymphony.quartz</groupId>
+                    <artifactId>quartz</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+        </dependency>
+        <!-- Apache Shiro End -->
+    </dependencies>
 
 </project>

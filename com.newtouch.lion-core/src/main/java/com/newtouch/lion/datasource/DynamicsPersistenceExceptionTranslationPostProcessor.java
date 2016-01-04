@@ -4,7 +4,7 @@
 *
 * $id: PersistenceExceptionTranslationPostProcessor.java 9552 2015年10月15日 下午3:50:38 WangLijun$
 */
-package com.newtouch.lion.datasource;
+package com.newtouch.lion.datasource; 
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -93,7 +93,7 @@ public class DynamicsPersistenceExceptionTranslationPostProcessor extends Persis
 			// Copy our properties (proxyTargetClass etc) inherited from ProxyConfig.
 			proxyFactory.copyFrom(this);
 			proxyFactory.addAdvisor(this.advisor);
-			return proxyFactory.getProxy(this.beanClassLo1ader);
+			return proxyFactory.getProxy(this.beanClassLoader);
 		}
 
 		

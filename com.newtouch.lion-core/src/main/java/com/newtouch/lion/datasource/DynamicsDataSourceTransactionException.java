@@ -4,7 +4,7 @@
 *
 * $id: DynamicsDataSourceTransactionException.java 9552 2015年10月9日 下午3:02:07 WangLijun$
 */
-package com.newtouch.lion.datasource;
+package com.newtouch.lion.datasource; 
 
 import com.newtouch.lion.exception.BaseException;
 

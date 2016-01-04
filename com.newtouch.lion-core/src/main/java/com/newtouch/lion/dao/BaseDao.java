@@ -126,7 +126,7 @@ public interface BaseDao<T extends BaseEntity<PK>,PK> extends Serializable {
 	/***
 	* @Title:强制清除Session缓存
 	* @Description: 清除缓存数据
-	* @param  设定文件
+	* @param
 	* @return void 返回类型
 	 */
 	public void clear();
@@ -135,7 +135,7 @@ public interface BaseDao<T extends BaseEntity<PK>,PK> extends Serializable {
 	/***
 	 * 
 	 * @param entity
-	 * @param lockMode
+	 * @param
 	 */
 	public void lock(T entity, LockModeType lockModeType);
 	/***

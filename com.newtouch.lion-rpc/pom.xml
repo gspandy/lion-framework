@@ -7,7 +7,7 @@
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-rpc</artifactId>
     <packaging>jar</packaging>
 
