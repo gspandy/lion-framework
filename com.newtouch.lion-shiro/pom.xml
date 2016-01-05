@@ -62,10 +62,6 @@
         </dependency>
         <!-- Apache Shiro Start -->
         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
         </dependency>
@@ -92,16 +88,6 @@
                 <exclusion>
                     <groupId>com.google.guava</groupId>
                     <artifactId>guava</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-quartz</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId> org.opensymphony.quartz</groupId>
-                    <artifactId>quartz</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
