@@ -21,7 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.newtouch.lion.common.lang.StringFormatter;
 import com.newtouch.lion.web.shiro.constant.Constants;
 import com.newtouch.lion.web.shiro.model.AuthorityModel;
-import com.newtouch.lion.web.shiro.service.ShiroResouceManager;
+import com.newtouch.lion.web.shiro.service.ShiroResourceManager;
 
 /**
  * <p>
@@ -48,7 +48,7 @@ public class ShiroFilterChainDefinitionManager  implements FactoryBean<Section> 
 	 * 资源权限读取
 	 */
 	@Autowired
-	private ShiroResouceManager shiroResouceManager;
+	private ShiroResourceManager shiroResouceManager;
 
 	/** shiro默认的链接定义***/
 	private String filterChainDefinitions;
