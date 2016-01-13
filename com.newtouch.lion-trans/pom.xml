@@ -4,12 +4,12 @@
     <parent>
         <groupId>com.newtouch.lion</groupId>
         <artifactId>com.newtouch.lion-parent</artifactId>
-        <version>1.5</version>
+        <version>1.6</version>
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-trans</artifactId>
-    <version>1.5</version>
+    <version>1.6</version>
     <name>com.newtouch.lion-trans</name>
     <url>http://maven.apache.org</url>
     <properties>
