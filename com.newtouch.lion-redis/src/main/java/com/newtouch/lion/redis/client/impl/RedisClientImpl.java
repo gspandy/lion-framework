@@ -71,6 +71,55 @@ public class RedisClientImpl extends DefaultClientImpl implements RedisClient{
         return this.shardedJedis.getShard(key).execute(callBack);
     }
 
+    @Override
+    public void clearDisableFlags() {
+        super.clearDisableFlags();
+    }
+
+    @Override
+    protected boolean isSharding() {
+        return super.isSharding();
+    }
+
+    @Override
+    public synchronized void refresh(String config) {
+        super.refresh(config);
+    }
+
+    @Override
+    public String flushDB() {
+        return super.flushDB();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+
+    @Override
+    public Set<String> keys(String pattern) {
+        return null;
+    }
 
     @Override
     public String set(final String key,final String value) {
