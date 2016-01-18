@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.newtouch.lion</groupId>
         <artifactId>com.newtouch.lion-parent</artifactId>
-        <version>1.5</version>
+        <version>1.6</version>
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
