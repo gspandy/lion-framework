@@ -4,7 +4,7 @@
  *
  * $id: ApplicationCacheManagerImpl.java 9552 2014-4-9 上午01:14:09 WangLijun$
  */
-package com.newtouch.lion.service.cache.impl;
+package com.newtouch.lion.service.cache;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,13 +41,12 @@ import com.newtouch.lion.service.cache.ApplicationCacheManager;
  * @author WangLijun
  * @version 1.0
  */
-@Service
-public class ApplicationCacheManagerImpl implements ApplicationCacheManager {
+public abstract class AbstractApplicationCacheManager implements ApplicationCacheManager {
 
 	private final Logger logger = LoggerFactory.getLogger(super.getClass());
 
 	@Autowired
-	private CacheManager cacheManager;
+	protected CacheManager cacheManager;
 
 	public Status getCacheStatus() {
 		return cacheManager.getStatus();
@@ -64,6 +63,59 @@ public class ApplicationCacheManagerImpl implements ApplicationCacheManager {
 
 		return cacheManagerModel;
 	}
+
+	/***
+	 * 根据ehcache的名称查询缓存数据
+	 * @param cacheManagerName
+	 * @return
+     */
+	protected CacheManagerModel findCacheManager(String cacheManagerName){
+		CacheManager  cacheManagerTemp=cacheManager.getCacheManager(cacheManagerName);
+		String[] cacheNames = cacheManagerTemp.getCacheNames();
+		CacheManagerModel cacheManagerModel = new CacheManagerModel();
+		cacheManagerModel.setName(cacheManagerTemp.getName());
+		cacheManagerModel.setSize(cacheNames.length);
+		cacheManagerModel.setStatusName(this.getCacheStatus().toString());
+		cacheManagerModel.setStatusIntValue(this.getCacheStatus().intValue());
+
+		List<CacheModel> list = null;
+		CacheModel cacheModel = null;
+
+		for (String cacheName : cacheNames) {
+
+			Cache cache = cacheManagerTemp.getCache(cacheName);
+
+			if (cache == null) {
+				logger.warn("This cache '{}' is null,Please analysis of log  and query reason",cacheName);
+				continue;
+			}
+
+			if (CollectionUtils.isEmpty(list)) {
+				list = new ArrayList<CacheModel>();
+			}
+			// 缓存对象
+			cacheModel = new CacheModel();
+			cacheModel.setName(cacheName);
+
+			cacheModel.setSize(cache.getSize());
+			cacheModel.setMemoryStoreSize(cache.calculateInMemorySize());
+
+			// cacheModel.setMemoryStoreEvictionPolicy(cache.getMemoryStoreEvictionPolicy().getName());
+			cacheModel.setDiskStoreSize((long) cache.getDiskStoreSize());
+			Statistics statistics = cache.getStatistics();
+			cacheModel.setInMemoryHits(statistics.getInMemoryHits());
+			cacheModel.setCacheHits(statistics.getCacheHits());
+			cacheModel.setOnDiskHits(statistics.getOnDiskHits());
+
+			list.add(cacheModel);
+		}
+		cacheManagerModel.setCacheModels(list);
+		return cacheManagerModel;
+	}
+
+
+
+
 
 	@SuppressWarnings({"static-access" })
 	public CacheManagerModel getCaches() {
@@ -99,6 +151,7 @@ public class ApplicationCacheManagerImpl implements ApplicationCacheManager {
 
 			cacheModel.setSize(cache.getSize());
 			cacheModel.setMemoryStoreSize(cache.calculateInMemorySize());
+			cache.getMemoryStoreEvictionPolicy().getName();
 			// cacheModel.setMemoryStoreEvictionPolicy(cache.getMemoryStoreEvictionPolicy().getName());
 			cacheModel.setDiskStoreSize((long) cache.getDiskStoreSize());
 			Statistics statistics = cache.getStatistics();
@@ -129,7 +182,7 @@ public class ApplicationCacheManagerImpl implements ApplicationCacheManager {
 
 			cacheModel.setSize(cache.getSize());
 			cacheModel.setMemoryStoreSize(cache.calculateInMemorySize());
-			cacheModel.setMemoryStoreEvictionPolicy(cache.getMemoryStoreEvictionPolicy().getName());
+			//cacheModel.setMemoryStoreEvictionPolicy(cache.getMemoryStoreEvictionPolicy().getName());
 			cacheModel.setDiskStoreSize((long) cache.getDiskStoreSize());
 			Statistics statistics = cache.getStatistics();
 			cacheModel.setInMemoryHits(statistics.getInMemoryHits());
@@ -141,5 +194,7 @@ public class ApplicationCacheManagerImpl implements ApplicationCacheManager {
 		cacheManagerModel.setCacheModels(list);
 		return cacheManagerModel;
 	}
+
+
 
 }

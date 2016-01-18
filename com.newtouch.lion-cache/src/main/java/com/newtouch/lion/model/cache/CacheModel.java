@@ -31,6 +31,8 @@ public class CacheModel implements Serializable {
 	private static final long serialVersionUID = -1738586242652155973L;
 	/** 缓存名称 */
 	private String name;
+	/*CacheManager Name*/
+	private String cacheManagerName;
 	/** 总数量大小 */
 	private int size;
 	/** 内存数量大小 */
@@ -47,6 +49,7 @@ public class CacheModel implements Serializable {
 	private Long onDiskHits;
 	/** 缓存策略 */
 	private String memoryStoreEvictionPolicy;
+
 
 	/**
 	 * 
@@ -213,19 +216,27 @@ public class CacheModel implements Serializable {
 		this.memoryStoreEvictionPolicy = memoryStoreEvictionPolicy;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "CacheModel [name=" + name + ", size=" + size
-				+ ", memoryStoreSize=" + memoryStoreSize + ", diskStoreSize="
-				+ diskStoreSize + ", elementModels=" + elementModels
-				+ ", cacheHits=" + cacheHits + ", inMemoryHits=" + inMemoryHits
-				+ ", onDiskHits=" + onDiskHits + ", memoryStoreEvictionPolicy="
-				+ memoryStoreEvictionPolicy + "]";
+	public String getCacheManagerName() {
+		return cacheManagerName;
 	}
 
+	public void setCacheManagerName(String cacheManagerName) {
+		this.cacheManagerName = cacheManagerName;
+	}
+
+	@Override
+	public String toString() {
+		return "CacheModel{" +
+				"cacheHits=" + cacheHits +
+				", name='" + name + '\'' +
+				", cacheManagerName='" + cacheManagerName + '\'' +
+				", size=" + size +
+				", memoryStoreSize=" + memoryStoreSize +
+				", diskStoreSize=" + diskStoreSize +
+				", elementModels=" + elementModels +
+				", inMemoryHits=" + inMemoryHits +
+				", onDiskHits=" + onDiskHits +
+				", memoryStoreEvictionPolicy='" + memoryStoreEvictionPolicy + '\'' +
+				'}';
+	}
 }
