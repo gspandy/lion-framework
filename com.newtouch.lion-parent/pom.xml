@@ -5,37 +5,38 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-parent</artifactId>
-    <version>1.6</version>
+    <version>1.61</version>
     <name>com.newtouch.lion-parent</name>
     <packaging>pom</packaging>
     <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
-        <lion-parent.version>1.6</lion-parent.version>
-        <lion-core.version>1.6</lion-core.version>
-        <lion-adpater.version>1.6</lion-adpater.version>
-        <lion-shiro.version>1.6</lion-shiro.version>
-        <lion-service.version>1.6</lion-service.version>
-        <lion-common.version>1.6</lion-common.version>
-        <lion-redis.version>1.6</lion-redis.version>
-        <lion-mongodb.version>1.6</lion-mongodb.version>
-        <lion-exception.version>1.6</lion-exception.version>
-        <lion-trans.version>1.6</lion-trans.version>
-        <lion-monitor.version>1.6</lion-monitor.version>
-        <lion-zookeeper.version>1.6</lion-zookeeper.version>
-        <lion-webcore.version>1.6</lion-webcore.version>
-        <lion-cache.version>1.6</lion-cache.version>
+        <lion-parent.version>1.61</lion-parent.version>
+        <lion-core.version>1.61</lion-core.version>
+        <lion-adpater.version>1.61</lion-adpater.version>
+        <lion-shiro.version>1.61</lion-shiro.version>
+        <lion-service.version>1.61</lion-service.version>
+        <lion-common.version>1.61</lion-common.version>
+        <lion-redis.version>1.61</lion-redis.version>
+        <lion-mongodb.version>1.61</lion-mongodb.version>
+        <lion-exception.version>1.61</lion-exception.version>
+        <lion-trans.version>1.61</lion-trans.version>
+        <lion-monitor.version>1.61</lion-monitor.version>
+        <lion-zookeeper.version>1.61</lion-zookeeper.version>
+        <lion-webcore.version>1.61</lion-webcore.version>
+        <lion-cache.version>1.61</lion-cache.version>
         <junit.version>4.8.2</junit.version>
         <slf4j.version>1.7.1</slf4j.version>
         <poi.version>3.9</poi.version>
         <logback.version>1.1.2</logback.version>
         <logback-ext-spring.version>0.1.1</logback-ext-spring.version>
         <javax.persistence.version>2.0</javax.persistence.version>
-        <hibernate.version>4.2.2.Final</hibernate.version>
+        <javax.jta.version>1.1</javax.jta.version>
+        <hibernate.version>5.0.6.Final</hibernate.version>
         <aopalliance.version>1.0</aopalliance.version>
-        <springframework.version>3.2.12.RELEASE</springframework.version>
-        <hibernate-validator.version>4.3.0.Final</hibernate-validator.version>
+        <springframework.version>4.2.4.RELEASE</springframework.version>
+        <hibernate-validator.version>5.2.2.Final</hibernate-validator.version>
         <mysql.version>5.1.32</mysql.version>
         <ojdbc14.version>10.2.0.4.0</ojdbc14.version>
         <druid.version>1.0.10</druid.version>
@@ -271,12 +272,17 @@
             </dependency>
             <!-- Apache Shiro End -->
 
-            <!-- JPA&ORM Start -->
+            <!-- JPA&ORM Start 
             <dependency>
                 <groupId>javax.persistence</groupId>
                 <artifactId>persistence-api</artifactId>
                 <version>${javax.persistence.version}</version>
-            </dependency>
+            </dependency>-->
+            <dependency>
+				<groupId>javax.transaction</groupId>
+				<artifactId>jta</artifactId>
+				<version>${javax.jta.version}</version>
+			</dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
