@@ -6,9 +6,9 @@
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion</artifactId>
     <packaging>pom</packaging>
-    <version>1.61</version>
+    <version>1.7.0</version>
     <name>com.newtouch.lion</name>
-    <url>http:/lion.newtouch.com</url>
+    <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

@@ -5,27 +5,25 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-parent</artifactId>
-    <version>1.61</version>
+    <version>1.7.0</version>
     <name>com.newtouch.lion-parent</name>
     <packaging>pom</packaging>
     <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
-        <lion-parent.version>1.61</lion-parent.version>
-        <lion-core.version>1.61</lion-core.version>
-        <lion-adpater.version>1.61</lion-adpater.version>
-        <lion-shiro.version>1.61</lion-shiro.version>
-        <lion-service.version>1.61</lion-service.version>
-        <lion-common.version>1.61</lion-common.version>
-        <lion-redis.version>1.61</lion-redis.version>
-        <lion-mongodb.version>1.61</lion-mongodb.version>
-        <lion-exception.version>1.61</lion-exception.version>
-        <lion-trans.version>1.61</lion-trans.version>
-        <lion-monitor.version>1.61</lion-monitor.version>
-        <lion-zookeeper.version>1.61</lion-zookeeper.version>
-        <lion-webcore.version>1.61</lion-webcore.version>
-        <lion-cache.version>1.61</lion-cache.version>
+        <lion-parent.version>1.7.0</lion-parent.version>
+        <lion-core.version>1.7.0</lion-core.version>
+        <lion-adpater.version>1.7.0</lion-adpater.version>
+        <lion-shiro.version>1.7.0</lion-shiro.version>
+        <lion-common.version>1.7.0</lion-common.version>
+        <lion-redis.version>1.7.0</lion-redis.version>
+        <lion-exception.version>1.7.0</lion-exception.version>
+        <lion-trans.version>1.7.0</lion-trans.version>
+        <lion-monitor.version>1.7.0</lion-monitor.version>
+        <lion-zookeeper.version>1.7.0</lion-zookeeper.version>
+        <lion-webcore.version>1.7.0</lion-webcore.version>
+        <lion-cache.version>1.7.0</lion-cache.version>
         <junit.version>4.8.2</junit.version>
         <slf4j.version>1.7.1</slf4j.version>
         <poi.version>3.9</poi.version>

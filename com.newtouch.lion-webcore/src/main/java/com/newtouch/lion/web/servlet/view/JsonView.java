@@ -135,9 +135,9 @@ public class JsonView extends AbstractView {
 	/***
 	 * 初始化 RequestContext
 	 * 
-	 * @param HttpServletRequest
-	 * @param HttpServletResponse
-	 * @param Map
+	 * @param  request
+	 * @param  response
+	 * @param  model
 	 *            <String, Object>
 	 */
 	protected void initRequestContext(HttpServletRequest request,
