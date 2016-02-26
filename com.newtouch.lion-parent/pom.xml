@@ -110,17 +110,6 @@
                 <artifactId>com.newtouch.lion-api</artifactId>
                 <version>${lion-api.version}</version>
             </dependency>
-
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-data</artifactId>
-                <version>${lion-data.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-im</artifactId>
-                <version>${lion-im.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.newtouch.lion</groupId>
                 <artifactId>com.newtouch.lion-shiro</artifactId>
@@ -130,11 +119,6 @@
                 <groupId>com.newtouch.lion</groupId>
                 <artifactId>com.newtouch.lion-webcore</artifactId>
                 <version>${lion-webcore.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-web</artifactId>
-                <version>${lion-web.version}</version>
             </dependency>
             <!-- anguler begin -->
             <dependency>

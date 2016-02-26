@@ -47,6 +47,11 @@ public interface ApplicationCacheManager {
 	 * @return
      */
 	public List<CacheManagerModel> findCacheMangers();
+
+
+	 void clear(String ehcacheName);
+
+	 void  clear(String ehcacheName,String cacheName);
 }
 
 	
