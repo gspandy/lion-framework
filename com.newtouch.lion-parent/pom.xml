@@ -23,6 +23,7 @@
         <lion-monitor.version>1.7.0</lion-monitor.version>
         <lion-zookeeper.version>1.7.0</lion-zookeeper.version>
         <lion-webcore.version>1.7.0</lion-webcore.version>
+        <lion-webtrans.version>1.7.0</lion-webtrans.version>
         <lion-cache.version>1.7.0</lion-cache.version>
         <junit.version>4.8.2</junit.version>
         <slf4j.version>1.7.1</slf4j.version>
@@ -141,6 +142,11 @@
                 <groupId>com.newtouch.lion</groupId>
                 <artifactId>com.newtouch.lion-trans</artifactId>
                 <version>${lion-trans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.newtouch.lion</groupId>
+                <artifactId>com.newtouch.lion-webtrans</artifactId>
+                <version>${lion-webtrans.version}</version>
             </dependency>
             <!-- lion End -->
             <!-- Test jar start -->
