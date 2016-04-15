@@ -47,13 +47,10 @@ public class AppContext {
 
 	public static UserInfo getUserInfo() {
 		if (currentUser.get() == null) {
-
 			UserInfo userInfo = new UserInfo("admin", 1L);
 			currentUser.set(userInfo);
-
 		}
-
-		return ((UserInfo) currentUser.get());
+		return  currentUser.get();
 	}
 
 	public static void cleanUser() {
