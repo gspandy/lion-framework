@@ -8,6 +8,8 @@ package com.newtouch.lion.dao.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -244,6 +246,14 @@ public abstract class BaseDaoImpl<T extends BaseEntity<PK>, PK> implements BaseD
 		for(Entry<String,?> entry:params.entrySet()){
 			query.setParameter(entry.getKey(), entry.getValue());
 		}
+
+		Object  obj=query.getSingleResult();
+		if(obj instanceof BigInteger){
+			  return Long.valueOf(obj.toString());
+		}else if(obj instanceof BigDecimal){
+			  return Long.valueOf(obj.toString());
+		}
+
 		return (Long) query.getSingleResult();
 	}
 
