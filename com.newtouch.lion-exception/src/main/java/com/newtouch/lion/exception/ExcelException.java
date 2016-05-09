@@ -7,7 +7,7 @@
 package com.newtouch.lion.exception; 
 /**
  * <p>
- * Title: Excel 异常
+ * Title: excel 异常
  * </p>
  * <p>
  * Description: 异常类，用导入和导出功能

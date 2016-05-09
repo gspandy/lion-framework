@@ -72,6 +72,8 @@
         <mybatis-spring.version>1.2.0</mybatis-spring.version>
         <hessian.version>4.0.38</hessian.version>
         <c3p0.version>0.9.1.2</c3p0.version>
+        <jmimemagic.version>0.1.4</jmimemagic.version>
+        <activation.version>1.1.1</activation.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -163,6 +165,16 @@
                 <scope>test</scope>
             </dependency>
             <!-- Test jar end -->
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>${activation.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jmimemagic</groupId>
+                <artifactId>jmimemagic</artifactId>
+                <version>${jmimemagic.version}</version>
+            </dependency>
             <!-- Logger Start -->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -685,6 +697,11 @@
             <dependency>
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
                 <version>${poi.version}</version>
             </dependency>
             <!-- POI End -->

@@ -22,6 +22,7 @@
             <groupId>com.newtouch.lion</groupId>
             <artifactId>com.newtouch.lion-exception</artifactId>
         </dependency>
+
         <!-- Logger Start -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -46,9 +47,17 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
-            <version>1.7.1</version>
         </dependency>
         <!-- Logger End -->
+        <dependency>
+            <groupId>net.sf.jmimemagic</groupId>
+            <artifactId>jmimemagic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>${activation.version}</version>
+        </dependency>
         <!-- Spring framework Start -->
         <dependency>
             <groupId>aopalliance</groupId>
@@ -82,18 +91,20 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>3.2.12.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>3.2.12.RELEASE</version>
         </dependency>
         <!-- Spring framework End -->
         <!-- POI Start -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
         </dependency>
         <!-- POI End -->
         <dependency>

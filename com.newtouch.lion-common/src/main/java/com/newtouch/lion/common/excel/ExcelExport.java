@@ -42,10 +42,10 @@ import com.newtouch.lion.common.number.NumberUtils;
 
 /**
  * <p>
- * Title: Excel 通用导出功能
+ * Title: excel 通用导出功能
  * </p>
  * <p>
- * Description: Excel 通用导出功能，根据泛型导出
+ * Description: excel 通用导出功能，根据泛型导出
  * </p>
  * <p>
  * Copyright: Copyright (c) 2015
@@ -78,7 +78,7 @@ public class ExcelExport<T> {
 	protected static Map<Object,Object> DEFAULT_BOOLEAN_MAP;
 	/**默认宽度 15*/
 	protected Integer defaultColWidth=15;
-	/**Excel 全局配置*/
+	/**excel 全局配置*/
 	protected ExcelConfig excelConfig;
 	/***
 	 * 默认配置
@@ -106,7 +106,7 @@ public class ExcelExport<T> {
 	}
 	
 	/**
-	 * @return Excel 全局配置
+	 * @return excel 全局配置
 	 */
 	public ExcelConfig getExcelConfig() {
 		return excelConfig;
@@ -307,7 +307,7 @@ public class ExcelExport<T> {
 	 * @param dataset      数据
 	 * @param out          输出流
 	 * @param codeTypes    IM转换
-	 * @param DataFormats  单元格数据格式转换,如果该字段是Date则则于日期格式转换
+	 * @param dataFormats  单元格数据格式转换,如果该字段是Date则则于日期格式转换
 	 * @throws IOException  IO 异常
 	 */
 	public void export(String title, String[] headers, Collection<T> dataset,
@@ -389,7 +389,7 @@ public class ExcelExport<T> {
 	/***
 	 * 获取数据样式
 	 * @param value Object
-	 * @param mapType Map类型转换
+	 * @param codeTypes Map类型转换
 	 * @return  
 	 */
 	protected String getCellValueForBoolean(Object value,String fieldName,Map<String,Map<Object,Object>> codeTypes){

@@ -52,7 +52,7 @@ public enum CellAlign {
 
  
 	/**
-	 * Excel 单元格对齐方式
+	 * excel 单元格对齐方式
 	 * @return the cellCode
 	 */
 	public short cellCode() {

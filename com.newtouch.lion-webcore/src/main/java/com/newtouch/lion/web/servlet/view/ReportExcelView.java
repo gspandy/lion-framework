@@ -42,9 +42,9 @@ public class ReportExcelView extends AbstractReportView{
 	/**日志*/
 	private static final Logger logger=LoggerFactory.getLogger(ReportExcelView.class);
 	
-	/** The content type for an Excel response Excel文件类型 */
+	/** The content type for an excel response Excel文件类型 */
 	private static final String CONTENT_TYPE = "application/vnd.ms-excel";
-	/**The  content disposition for an Excel response*/
+	/**The  content disposition for an excel response*/
 	private static final String CONTENT_DISPOSITION="Content-disposition";
 	/** The extension to look for existing templates*/
 	private static final String EXTENSION =FileUtil.EXCEL_EXTENSION;
