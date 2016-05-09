@@ -3,14 +3,14 @@
     <parent>
         <groupId>com.newtouch.lion</groupId>
         <artifactId>com.newtouch.lion-parent</artifactId>
-        <version>1.7.0</version>
+        <version>1.7.1</version>
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-rpc</artifactId>
     <packaging>jar</packaging>
-    <version>1.7.0</version>
+    <version>1.7.1</version>
     <name>com.newtouch.lion-rpc</name>
     <url>http://lion.newtouch.com</url>
 

@@ -5,12 +5,12 @@
     <parent>
         <artifactId>com.newtouch.lion-parent</artifactId>
         <groupId>com.newtouch.lion</groupId>
-        <version>1.7.0</version>
+        <version>1.7.1</version>
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>com.newtouch.lion-monitor</artifactId>
-    <version>1.7.0</version>
+    <version>1.7.1</version>
     <name>com.newtouch.lion-monitor</name>
     <url>http://lion.newtouch.com</url>
     <dependencies>
