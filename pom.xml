@@ -6,7 +6,7 @@
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion</artifactId>
     <packaging>pom</packaging>
-    <version>1.7.0</version>
+    <version>1.7.2</version>
     <name>com.newtouch.lion</name>
     <url>http://lion.newtouch.com</url>
     <properties>

@@ -5,26 +5,26 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-parent</artifactId>
-    <version>1.7.1</version>
+    <version>1.7.2</version>
     <name>com.newtouch.lion-parent</name>
     <packaging>pom</packaging>
     <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
-        <lion-parent.version>1.7.1</lion-parent.version>
-        <lion-core.version>1.7.1</lion-core.version>
-        <lion-adpater.version>1.7.1</lion-adpater.version>
-        <lion-shiro.version>1.7.1</lion-shiro.version>
-        <lion-common.version>1.7.1</lion-common.version>
-        <lion-redis.version>1.7.1</lion-redis.version>
-        <lion-exception.version>1.7.1</lion-exception.version>
-        <lion-trans.version>1.7.1</lion-trans.version>
-        <lion-monitor.version>1.7.1</lion-monitor.version>
-        <lion-zookeeper.version>1.7.1</lion-zookeeper.version>
-        <lion-webcore.version>1.7.1</lion-webcore.version>
-        <lion-webtrans.version>1.7.1</lion-webtrans.version>
-        <lion-cache.version>1.7.1</lion-cache.version>
+        <lion-parent.version>1.7.2</lion-parent.version>
+        <lion-core.version>1.7.2</lion-core.version>
+        <lion-adpater.version>1.7.2</lion-adpater.version>
+        <lion-shiro.version>1.7.2</lion-shiro.version>
+        <lion-common.version>1.7.2</lion-common.version>
+        <lion-redis.version>1.7.2</lion-redis.version>
+        <lion-exception.version>1.7.2</lion-exception.version>
+        <lion-trans.version>1.7.2</lion-trans.version>
+        <lion-monitor.version>1.7.2</lion-monitor.version>
+        <lion-zookeeper.version>1.7.2</lion-zookeeper.version>
+        <lion-webcore.version>1.7.2</lion-webcore.version>
+        <lion-webtrans.version>1.7.2</lion-webtrans.version>
+        <lion-cache.version>1.7.2</lion-cache.version>
         <junit.version>4.8.2</junit.version>
         <slf4j.version>1.7.1</slf4j.version>
         <poi.version>3.9</poi.version>
@@ -284,9 +284,28 @@
 				<version>${javax.jta.version}</version>
 			</dependency>
             <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.20.0-GA</version>
+            </dependency>
+            <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
                 <version>${hibernate.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.javassist</groupId>
+                        <artifactId>javassist</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.logging</groupId>
+                        <artifactId>jboss-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss</groupId>
+                        <artifactId>jandex</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>

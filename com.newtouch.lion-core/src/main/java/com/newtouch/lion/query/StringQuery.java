@@ -1,9 +1,9 @@
 package com.newtouch.lion.query;
 
+
 import org.springframework.util.StringUtils;
 
 import java.util.Collection;
-import java.util.Map;
 
 /**
  * @author li.yu

@@ -98,10 +98,14 @@ public class TransServiceController {
                         }
 
                         response.setResponseBody(responseBody);
-                    } catch (Exception var23) {
-                        this.logger.error("接口调用异常：{}", var23.getMessage(), var23);
-                        response.setErrorMsg(var23.getMessage());
-                        response.setStatus(Integer.valueOf(500));
+                    } catch (Exception e) {
+                        String  errorMsg = e.getMessage();
+                        if(errorMsg == null) {
+                            errorMsg = e.getCause().getMessage();
+                        }
+                        logger.error("接口调用异常：{}", errorMsg, e);
+                        response.setErrorMsg(errorMsg);
+                        response.setStatus(500);
                     } finally {
                         threadLocal.remove();
                     }
