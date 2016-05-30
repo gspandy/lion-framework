@@ -125,6 +125,10 @@ public class TransServiceController {
 
     }
 
+    /***
+     * 安装验证
+     * @return
+     */
     private Collection<TransSecurity> getApiServiceSecurity() {
         if(this.transSecurities != null) {
             return this.transSecurities;

@@ -6,10 +6,8 @@
  */
 package com.newtouch.lion.web.shiro.filter;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletResponse;
-
+import com.newtouch.lion.common.web.LionWebUtils;
+import com.newtouch.lion.web.shiro.constant.Constants;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.StringUtils;
 import org.apache.shiro.web.filter.authz.PermissionsAuthorizationFilter;
@@ -17,8 +15,9 @@ import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.newtouch.lion.common.web.LionWebUtils;
-import com.newtouch.lion.web.shiro.constant.Constants;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * <p>
@@ -48,8 +47,6 @@ public class AjaxPermissionshorizationFilter extends PermissionsAuthorizationFil
 	@Override
 	protected boolean onAccessDenied(ServletRequest request,ServletResponse response, Object mappedValue) throws Exception {
 		Subject subject = getSubject(request, response);
-		
-		
 		//判断是否登录
 		if(subject.getPrincipal()==null){
 			if(LionWebUtils.isAjax(request)){
