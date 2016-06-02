@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-shiro</artifactId>
-    <version>1.7.2</version>
+    <version>1.7.3</version>
     <url>http://one.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

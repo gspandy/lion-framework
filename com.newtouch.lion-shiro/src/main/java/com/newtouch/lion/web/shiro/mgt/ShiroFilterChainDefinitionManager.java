@@ -6,8 +6,10 @@
  */
 package com.newtouch.lion.web.shiro.mgt;
 
-import java.util.List;
-
+import com.newtouch.lion.common.lang.StringFormatter;
+import com.newtouch.lion.web.shiro.constant.Constants;
+import com.newtouch.lion.web.shiro.model.AuthorityModel;
+import com.newtouch.lion.web.shiro.service.ShiroResourceManager;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.config.Ini;
 import org.apache.shiro.config.Ini.Section;
@@ -18,10 +20,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.newtouch.lion.common.lang.StringFormatter;
-import com.newtouch.lion.web.shiro.constant.Constants;
-import com.newtouch.lion.web.shiro.model.AuthorityModel;
-import com.newtouch.lion.web.shiro.service.ShiroResourceManager;
+import java.util.List;
 
 /**
  * <p>
