@@ -6,7 +6,7 @@
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion</artifactId>
     <packaging>pom</packaging>
-    <version>1.7.0</version>
+    <version>1.7.2-SNAPSHOT</version>
     <name>com.newtouch.lion</name>
     <url>http://lion.newtouch.com</url>
     <properties>
@@ -20,9 +20,6 @@
         <module>com.newtouch.lion-core</module>
         <module>com.newtouch.lion-shiro</module>
         <module>com.newtouch.lion-webcore</module>
-        <module>com.newtouch.lion-rpc</module>
-        <module>com.newtouch.lion-dsession</module>
-        <module>com.newtouch.lion-trans</module>
         <module>com.newtouch.lion-monitor</module>
         <module>com.newtouch.lion-cache</module>
         <module>com.newtouch.lion-webtrans</module>

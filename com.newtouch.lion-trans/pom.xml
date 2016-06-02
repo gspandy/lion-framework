@@ -4,13 +4,13 @@
     <parent>
         <groupId>com.newtouch.lion</groupId>
         <artifactId>com.newtouch.lion-parent</artifactId>
-        <version>1.7.2</version>
+        <version>1.7.2-SNAPSHOT</version>
         <relativePath>../com.newtouch.lion-parent/pom.xml</relativePath>
     </parent>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-trans</artifactId>
-    <version>1.7.2</version>
-    <name>com.newtouch.lion-trans</name>
+    <version>1.7.2-SNAPSHOT</version>
+    <name>lion-trans</name>
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -5,25 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.newtouch.lion</groupId>
     <artifactId>com.newtouch.lion-parent</artifactId>
-    <version>1.7.2</version>
+    <version>1.7.2-SNAPSHOT</version>
     <name>com.newtouch.lion-parent</name>
     <packaging>pom</packaging>
     <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.7</jdk.version>
-        <lion-parent.version>1.7.2</lion-parent.version>
-        <lion-core.version>1.7.2</lion-core.version>
-        <lion-adpater.version>1.7.2</lion-adpater.version>
-        <lion-shiro.version>1.7.2</lion-shiro.version>
-        <lion-common.version>1.7.2</lion-common.version>
-        <lion-redis.version>1.7.2</lion-redis.version>
-        <lion-exception.version>1.7.2</lion-exception.version>
-        <lion-trans.version>1.7.2</lion-trans.version>
-        <lion-monitor.version>1.7.2</lion-monitor.version>
-        <lion-zookeeper.version>1.7.2</lion-zookeeper.version>
-        <lion-webcore.version>1.7.2</lion-webcore.version>
-        <lion-webtrans.version>1.7.2</lion-webtrans.version>
+        <lion-parent.version>1.7.2-SNAPSHOT</lion-parent.version>
+        <lion-core.version>1.7.2-SNAPSHOT</lion-core.version>
+        <lion-adpater.version>1.7.2-SNAPSHOT</lion-adpater.version>
+        <lion-shiro.version>1.7.2-SNAPSHOT</lion-shiro.version>
+        <lion-common.version>1.7.2-SNAPSHOT</lion-common.version>
+        <lion-redis.version>1.7.2-SNAPSHOT</lion-redis.version>
+        <lion-exception.version>1.7.2-SNAPSHOT</lion-exception.version>
+        <lion-trans.version>1.7.2-SNAPSHOT</lion-trans.version>
+        <lion-monitor.version>1.7.2-SNAPSHOT</lion-monitor.version>
+        <lion-webcore.version>1.7.2-SNAPSHOT</lion-webcore.version>
+        <lion-webtrans.version>1.7.2-SNAPSHOT</lion-webtrans.version>
         <lion-cache.version>1.7.2</lion-cache.version>
         <junit.version>4.8.2</junit.version>
         <slf4j.version>1.7.1</slf4j.version>
@@ -74,6 +73,7 @@
         <c3p0.version>0.9.1.2</c3p0.version>
         <jmimemagic.version>0.1.4</jmimemagic.version>
         <activation.version>1.1.1</activation.version>
+        <log4j.version>1.2.17</log4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -210,6 +210,11 @@
                 <groupId>org.logback-extensions</groupId>
                 <artifactId>logback-ext-spring</artifactId>
                 <version>${logback-ext-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
             </dependency>
             <!-- Logger End -->
 
