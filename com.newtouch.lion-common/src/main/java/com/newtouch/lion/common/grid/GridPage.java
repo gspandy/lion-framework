@@ -13,8 +13,11 @@ import java.util.Map;
  * 定义一个与前端dbGrid匹配的page对象用于与后端VO类匹配使用
  */
 public class GridPage {
+
     private int pageNumber;
+
     private int pageSize;
+
     private String keyWord;
     /**
      * 需要查询的字段，支持级联属性

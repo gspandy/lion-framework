@@ -39,7 +39,7 @@
 	<bean id="server1" class="com.newtouch.lion.redis.shard.NodeInfoJedis">
 		<property name="ip" value="${redis.host}" />
 		<property name="port" value="${redis.port}" />
-		<property name="password" value="" />
+		<property name="password" value="${redis.password}" />
 		<property name="timeOut" value="${redis.timeout}" />
 		<property name="dbIndex" value="${redis.default.db}"/>
 	</bean>
@@ -67,6 +67,9 @@
 		<property name="shardConfig" ref="shardConfig" />
 	</bean>
 	<bean id="redisClient" class="com.newtouch.lion.redis.client.impl.spring.SpringRedisClientImpl" init-method="init">
+		<property name="configManagerSpring" ref="configManagerSpring" />
+	</bean>
+	<bean id="springBinaryRedisClient" class="com.newtouch.lion.redis.client.impl.spring.SpringBinaryRedisClientImpl" init-method="init">
 		<property name="configManagerSpring" ref="configManagerSpring" />
 	</bean>
 </beans>

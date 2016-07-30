@@ -23,8 +23,8 @@
         <lion-monitor.version>1.7.2-SNAPSHOT</lion-monitor.version>
         <lion-webcore.version>1.7.2-SNAPSHOT</lion-webcore.version>
         <lion-webtrans.version>1.7.2-SNAPSHOT</lion-webtrans.version>
-        <lion-cache.version>1.7.2</lion-cache.version>
-        <junit.version>4.8.2</junit.version>
+        <lion-cache.version>1.7.2-SNAPSHOT</lion-cache.version>
+        <junit.version>4.12</junit.version>
         <slf4j.version>1.7.1</slf4j.version>
         <poi.version>3.9</poi.version>
         <logback.version>1.1.2</logback.version>

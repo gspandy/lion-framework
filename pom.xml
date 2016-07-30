@@ -24,4 +24,23 @@
         <module>com.newtouch.lion-cache</module>
         <module>com.newtouch.lion-webtrans</module>
     </modules>
+    <developers>
+        <developer>
+            <email>lijun.wang1@newtouch.cn</email>
+            <name>wanglijun</name>
+            <organization>newtouch</organization>
+        </developer>
+    </developers>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://maven.newtouch.com/content/repositories/newtouch/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://maven.newtouch.com/content/repositories/newtouch-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
