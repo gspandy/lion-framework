@@ -23,6 +23,10 @@ public class User {
 
     private int old;
 
+
+    public User() {
+    }
+
     public User(String name, int old) {
         this.name = name;
         this.old = old;
@@ -62,5 +66,14 @@ public class User {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", old=" + old +
+                '}';
     }
 }

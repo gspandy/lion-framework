@@ -69,7 +69,7 @@
 	<bean id="redisClient" class="com.newtouch.lion.redis.client.impl.spring.SpringRedisClientImpl" init-method="init">
 		<property name="configManagerSpring" ref="configManagerSpring" />
 	</bean>
-	<bean id="springBinaryRedisClient" class="com.newtouch.lion.redis.client.impl.spring.SpringBinaryRedisClientImpl" init-method="init">
+	<bean id="binaryRedisClient" class="com.newtouch.lion.redis.client.impl.spring.SpringBinaryRedisClientImpl" init-method="init">
 		<property name="configManagerSpring" ref="configManagerSpring" />
 	</bean>
 </beans>
