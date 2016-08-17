@@ -186,32 +186,7 @@ public class DistributedContextUtil {
 	public static String decodeSessionIdFromURL(
 			DistributedRequestContext distributedRequestContext) {
 		String uri = distributedRequestContext.getRequest().getRequestURI();
-		String keyName = SessionConstant.SESSION_ID;
-		int uriLength = uri.length();
-		int keyNameLength = keyName.length();
-
-		for (int keyBeginIndex = uri.indexOf(';'); keyBeginIndex >= 0; keyBeginIndex = uri
-				.indexOf(';', keyBeginIndex + 1)) {
-			keyBeginIndex++;
-
-			if (uriLength - keyBeginIndex <= keyNameLength
-					|| !uri.regionMatches(keyBeginIndex, keyName, 0,
-							keyNameLength)
-					|| uri.charAt(keyBeginIndex + keyNameLength) != '=') {
-				continue;
-			}
-
-			int valueBeginIndex = keyBeginIndex + keyNameLength + 1;
-			int valueEndIndex = uri.indexOf(';', valueBeginIndex);
-
-			if (valueEndIndex < 0) {
-				valueEndIndex = uriLength;
-			}
-
-			return uri.substring(valueBeginIndex, valueEndIndex);
-		}
-
-		return null;
+        return getSessionIdForm(uri);
 	}
 	
 	
@@ -223,20 +198,7 @@ public class DistributedContextUtil {
 	 */
 	public static String decodeSessionIdFromCookie(DistributedRequestContext distributedRequestContext) {
 		Cookie[] cookies = distributedRequestContext.getRequest().getCookies();
-
-		if (cookies != null) {
-
-			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals(SessionConstant.SESSION_ID)) {
-					String sessionID = StringUtils.trimWhitespace(cookie
-							.getValue());
-					if (sessionID != null) {
-						return sessionID;
-					}
-				}
-			}
-		}
-		return null;
+		return getSessionId(cookies);
 	}
 	
 	  /**
@@ -309,6 +271,23 @@ public class DistributedContextUtil {
      */
     public static String decodeSessionIDFromURL(DistributedSessionContext context) {
         String uri = context.getRequest().getRequestURI();
+        return getSessionIdForm(uri);
+    }
+
+    /**
+     * 
+     * 功能描述: 从cookie中取得session ID。<br>
+     * @param   context
+     * @return 如果存在，则返回session ID，否则返回
+     */
+    public static String decodeSessionIDFromCookie(DistributedSessionContext context) {
+        Cookie[] cookies = context.getRequest().getCookies();
+        return getSessionId(cookies);
+    }
+
+
+
+    private static String getSessionIdForm(String uri){
         String keyName = SessionConstant.SESSION_ID;
         int uriLength = uri.length();
         int keyNameLength = keyName.length();
@@ -336,17 +315,15 @@ public class DistributedContextUtil {
         return null;
     }
 
-    /**
-     * 
-     * 功能描述: 从cookie中取得session ID。<br>
-     * @param   context
-     * @return 如果存在，则返回session ID，否则返回
+
+
+    /***
+     * 显示
+     * @param cookies
+     * @return
      */
-    public static String decodeSessionIDFromCookie(DistributedSessionContext context) {
-        Cookie[] cookies = context.getRequest().getCookies();
-
+    private static String  getSessionId(Cookie[] cookies){
         if (cookies != null) {
-
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals(SessionConstant.SESSION_ID)) {
                     String sessionID = StringUtils.trimWhitespace(cookie.getValue());
@@ -358,4 +335,5 @@ public class DistributedContextUtil {
         }
         return null;
     }
+
 }
