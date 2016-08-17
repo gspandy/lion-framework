@@ -133,7 +133,4 @@ public class DefaultClientImpl {
             shard.clearDisableFlags();
         }
     }
-
-
-    
 }
