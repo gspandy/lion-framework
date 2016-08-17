@@ -28,7 +28,6 @@ import com.newtouch.lion.dsession.config.DistributedCookieConfig;
 import com.newtouch.lion.dsession.config.DistributedSessionConfig;
 import com.newtouch.lion.dsession.context.DefaultDistributedSessionContext;
 import com.newtouch.lion.dsession.util.DistributedContextUtil;
-import com.newtouch.lion.session.common.SessionConstant;
 
 /**
  * <p>
@@ -83,7 +82,7 @@ public class DistributedSessionFilter  implements Filter{
         } else {
         	DefaultDistributedSessionContext distributedSessionContext = new DefaultDistributedSessionContext(servletContext, request,response, sessionConfig, distributedCookieConfig);
             // 跟新session的上次访问时间
-        	DistributedContextUtil.writeKeyValueToCookie(distributedSessionContext,SessionConstant.SESSION_LASTACCESS_TIME,String.valueOf(System.currentTimeMillis()));
+        	DistributedContextUtil.writeKeyValueToCookie(distributedSessionContext,SessionConstant.LAST_ACCESSED_TIME,String.valueOf(System.currentTimeMillis()));
             chain.doFilter(distributedSessionContext.getRequest(), distributedSessionContext.getResponse());
         }
 	}

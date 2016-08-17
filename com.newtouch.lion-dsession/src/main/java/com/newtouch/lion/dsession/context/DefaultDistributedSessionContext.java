@@ -4,25 +4,20 @@
 *
 * $id: DefaultDistributedContext.java 9552 2015年5月21日 下午3:02:58 WangLijun$
 */
-package com.newtouch.lion.dsession.context; 
+package com.newtouch.lion.dsession.context;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
-import javax.servlet.http.HttpSession;
-
+import com.newtouch.lion.dsession.DistributedHttpSession;
+import com.newtouch.lion.dsession.common.UUIDGenerator;
+import com.newtouch.lion.dsession.config.DistributedCookieConfig;
+import com.newtouch.lion.dsession.config.DistributedSessionConfig;
+import com.newtouch.lion.dsession.constant.SessionConstant;
+import com.newtouch.lion.dsession.util.DistributedContextUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
-import com.newtouch.lion.dsession.DistributedHttpSession;
-import com.newtouch.lion.dsession.config.DistributedCookieConfig;
-import com.newtouch.lion.dsession.config.DistributedSessionConfig;
-import com.newtouch.lion.dsession.util.DistributedContextUtil;
-import com.newtouch.lion.dsession.util.UUIDGenerator;
-import com.newtouch.lion.session.common.SessionConstant;
+import javax.servlet.ServletContext;
+import javax.servlet.http.*;
 
 /**
  * <p>
@@ -41,7 +36,7 @@ import com.newtouch.lion.session.common.SessionConstant;
  * @author WangLijun
  * @version 1.0
  */
-public class DefaultDistributedSessionContext extends AbstractDistributedRequestContext  implements DistributedSessionContext {
+public class DefaultDistributedSessionContext extends AbstractDistributedRequestContext implements DistributedSessionContext {
 	/**
 	 * 日志
 	 */
@@ -72,12 +67,12 @@ public class DefaultDistributedSessionContext extends AbstractDistributedRequest
 	 * @param servletContext
 	 * @param request
 	 * @param response
-	 * @param sessionConfig
+	 * @param distributedSessionConfig
 	 * @param distributedCookieConfig
 	 */
 	public DefaultDistributedSessionContext(ServletContext servletContext,
-			HttpServletRequest request, HttpServletResponse response,
-			DistributedSessionConfig distributedSessionConfig, DistributedCookieConfig distributedCookieConfig) {
+											HttpServletRequest request, HttpServletResponse response,
+											DistributedSessionConfig distributedSessionConfig, DistributedCookieConfig distributedCookieConfig) {
 		super(servletContext, request, response);		
 		super.setRequest(new DistributedHttpServletRequestWrapper(request));
 		super.setResponse(new DistributedHttpServletResponseWrapper(response));
@@ -117,7 +112,7 @@ public class DefaultDistributedSessionContext extends AbstractDistributedRequest
     			if(!create){
     				return null;
     			}
-    			this.sessionId=UUIDGenerator.getUUID();
+    			this.sessionId= UUIDGenerator.getUUID();
     			this.encodeSessionIDIntoCookie(this.sessionId);
     			isNew=true;
     		}
@@ -226,7 +221,7 @@ public class DefaultDistributedSessionContext extends AbstractDistributedRequest
 
      */
     private void writeSessionIDToCookie(String cookieValue) {
-    	DistributedContextUtil.writeKeyValueToCookie(this,SessionConstant.SESSION_ID, cookieValue);
+    	DistributedContextUtil.writeKeyValueToCookie(this, SessionConstant.SESSION_ID, cookieValue);
     }
 	
 	 /**

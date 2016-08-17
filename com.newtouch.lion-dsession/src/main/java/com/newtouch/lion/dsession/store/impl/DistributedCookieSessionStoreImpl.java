@@ -4,16 +4,15 @@
 *
 * $id: DistributedCookieSessionStore.java 9552 2015年6月15日 下午5:07:52 WangLijun$
 */
-package com.newtouch.lion.dsession.store.impl; 
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package com.newtouch.lion.dsession.store.impl;
 
 import com.newtouch.lion.dsession.config.DistributedSessionAttributeConfig;
 import com.newtouch.lion.dsession.context.DistributedSessionContext;
 import com.newtouch.lion.dsession.store.DistributedCookieStore;
 import com.newtouch.lion.dsession.store.DistributedSessionStore;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * <p>
@@ -32,7 +31,7 @@ import com.newtouch.lion.dsession.store.DistributedSessionStore;
  * @author WangLijun
  * @version 1.0
  */
-public class DistributedCookieSessionStoreImpl  implements   DistributedSessionStore{
+public class DistributedCookieSessionStoreImpl  implements DistributedSessionStore {
 	
 	  /**
      * SessionAttributeConfig
@@ -40,7 +39,7 @@ public class DistributedCookieSessionStoreImpl  implements   DistributedSessionS
     @Autowired
     private DistributedSessionAttributeConfig distributedSessionAttributeConfig;
     @Autowired
-    private  DistributedCookieStore  distributedCookieStore;
+    private DistributedCookieStore distributedCookieStore;
 
 	/* (non-Javadoc)
 	 * @see com.newtouch.lion.dsession.store.DistributedSessionStore#invalidate(com.newtouch.lion.dsession.context.DistributedSessionContext)
@@ -63,7 +62,7 @@ public class DistributedCookieSessionStoreImpl  implements   DistributedSessionS
 	 * @see com.newtouch.lion.dsession.store.DistributedSessionStore#setAttribute(com.newtouch.lion.dsession.context.DistributedSessionContext, java.lang.String, java.lang.Object)
 	 */
 	@Override
-	public void setAttribute(DistributedSessionContext sessionContext,String key, Object value) {
+	public void setAttribute(DistributedSessionContext sessionContext, String key, Object value) {
 		this.distributedCookieStore.setAttribute(sessionContext, key, value);
 	}
 

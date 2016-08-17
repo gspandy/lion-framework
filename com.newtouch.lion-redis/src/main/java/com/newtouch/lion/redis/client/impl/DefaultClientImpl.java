@@ -1,15 +1,14 @@
 package com.newtouch.lion.redis.client.impl;
 
-import java.util.Collection;
-import java.util.concurrent.CountDownLatch;
-
+import com.newtouch.lion.redis.config.ConfigManager;
+import com.newtouch.lion.redis.shard.ShardHandler;
 import com.newtouch.lion.redis.shard.ShardedJedis;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.newtouch.lion.redis.config.ConfigManager;
-import com.newtouch.lion.redis.shard.ShardHandler;
+import java.util.Collection;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * 默认的客户端实现
@@ -134,4 +133,7 @@ public class DefaultClientImpl {
             shard.clearDisableFlags();
         }
     }
+
+
+    
 }

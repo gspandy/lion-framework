@@ -6,27 +6,24 @@
  */
 package com.newtouch.lion.dsession.util;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import javax.servlet.ServletRequest;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.util.StringUtils;
-
 import com.newtouch.lion.dsession.config.DistributedCookieAttributeConfig;
 import com.newtouch.lion.dsession.context.DefaultDistributedSessionContext;
 import com.newtouch.lion.dsession.context.DistributedRequestContext;
 import com.newtouch.lion.dsession.context.DistributedSessionContext;
 import com.newtouch.lion.dsession.store.DistributedCookieStore;
-import com.newtouch.lion.session.common.SessionConstant;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <p>
@@ -56,7 +53,7 @@ public class DistributedContextUtil {
      * 功能描述:根据requestContext写cookie <br>
      * 〈功能详细描述〉
      *
-     * @param requestContext request context 
+     * @param     context
      * @param key key
      * @param value value
      * @see [相关类/方法](可选)
@@ -105,7 +102,7 @@ public class DistributedContextUtil {
     /**
      * 
      * 功能描述: 根据requestContext读cookie<br>
-     * @param requestContext request context
+     * @param     context
      * @param keys keys
      * @return map
      */
@@ -220,7 +217,7 @@ public class DistributedContextUtil {
 
 	/**
 	 * 功能描述: 从cookie中取得session ID。<br> 
-	 * @param DistributedRequestContext        distributedRequestContext
+	 * @param distributedRequestContext        distributedRequestContext
 	 * @return 如果存在，则返回session ID，否则返回
 	 */
 	public static String decodeSessionIdFromCookie(DistributedRequestContext distributedRequestContext) {
@@ -246,7 +243,7 @@ public class DistributedContextUtil {
      * 功能描述:  将session ID编码到URL中去。<br>
      * 〈功能详细描述〉
      *
-     * @param requestContext request context
+     * @param context   context
      * @param url url
      * @return  包含session ID的URL
      * @see [相关类/方法](可选)
@@ -306,7 +303,7 @@ public class DistributedContextUtil {
 	 /**
      * 
      * 功能描述: 从URL中取得session ID。<br>
-     * @param requestContext request context
+     * @param   context
      * @return 如果存在，则返回session ID，否则返回
      */
     public static String decodeSessionIDFromURL(DistributedSessionContext context) {
@@ -341,7 +338,7 @@ public class DistributedContextUtil {
     /**
      * 
      * 功能描述: 从cookie中取得session ID。<br>
-     * @param requestContext request context
+     * @param   context
      * @return 如果存在，则返回session ID，否则返回
      */
     public static String decodeSessionIDFromCookie(DistributedSessionContext context) {

@@ -74,6 +74,7 @@
         <jmimemagic.version>0.1.4</jmimemagic.version>
         <activation.version>1.1.1</activation.version>
         <log4j.version>1.2.17</log4j.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -105,16 +106,6 @@
             </dependency>
             <dependency>
                 <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-adpater</artifactId>
-                <version>${lion-adpater.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-api</artifactId>
-                <version>${lion-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
                 <artifactId>com.newtouch.lion-shiro</artifactId>
                 <version>${lion-shiro.version}</version>
             </dependency>
@@ -123,27 +114,10 @@
                 <artifactId>com.newtouch.lion-webcore</artifactId>
                 <version>${lion-webcore.version}</version>
             </dependency>
-            <!-- anguler begin -->
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-angularweb</artifactId>
-                <version>${lion-angularweb.version}</version>
-            </dependency>
-            <!-- angular end -->
             <dependency>
                 <groupId>com.newtouch.lion</groupId>
                 <artifactId>com.newtouch.lion-redis</artifactId>
                 <version>${lion-redis.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-mongodb</artifactId>
-                <version>${lion-mongodb.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.newtouch.lion</groupId>
-                <artifactId>com.newtouch.lion-trans</artifactId>
-                <version>${lion-trans.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.newtouch.lion</groupId>
@@ -217,7 +191,6 @@
                 <version>${log4j.version}</version>
             </dependency>
             <!-- Logger End -->
-
             <!-- Apache Shiro Start -->
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
@@ -757,6 +730,11 @@
             </dependency>
             <!-- JSON End -->
             <!-- Servlet&&JSP Start -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet-api.version}</version>
+            </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jsp-api</artifactId>

@@ -7,12 +7,8 @@
 */
 package com.newtouch.lion.web.controller; 
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.newtouch.lion.common.date.DateUtil;
+import com.newtouch.lion.web.support.editor.StringEscapeEditor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -23,8 +19,10 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.newtouch.lion.common.date.DateUtil;
-import com.newtouch.lion.web.support.editor.StringEscapeEditor;
+import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 
 /**
  * <p>
@@ -78,7 +76,7 @@ public class AbstractController {
 	/**
 	 * 用户跳转view页面
 	 * @param folder   路径
-	 * @param view 名称(不加后缀)
+	 * @param jspName 名称(不加后缀)
 	 * @return 指定view页面
 	 */
 	//@RequestMapping("/{folder}/{jspName}")
@@ -116,7 +114,7 @@ public class AbstractController {
 	 */
 	protected HttpServletRequest  getRequest(){
 		ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();  
-        return servletRequestAttributes.getRequest();     
+        return servletRequestAttributes.getRequest();
 	}
 	/****
 	 * 返回JSON图

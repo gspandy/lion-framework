@@ -6,20 +6,18 @@
  */
 package com.newtouch.lion.dsession.store.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.Cookie;
-
+import com.newtouch.lion.dsession.config.DistributedCookieAttributeConfig;
+import com.newtouch.lion.dsession.context.DistributedSessionContext;
+import com.newtouch.lion.dsession.store.DistributedCookieStore;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
-import com.newtouch.lion.dsession.config.DistributedCookieAttributeConfig;
-import com.newtouch.lion.dsession.context.DistributedSessionContext;
-import com.newtouch.lion.dsession.store.DistributedCookieStore;
+import javax.servlet.http.Cookie;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
@@ -131,7 +129,7 @@ public class DefaultDistributeCookieStoreImpl implements DistributedCookieStore 
 	 */
 	@Override
 	public void setAttribute(DistributedSessionContext sessionContext, String key,
-			Object value) {
+							 Object value) {
 		if (this.distributedCookieAttributeConfig.getEncoder() != null) {
 			key = this.distributedCookieAttributeConfig.getEncoder()
 					.encodeName(key);

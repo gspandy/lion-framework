@@ -12,7 +12,7 @@
     <version>1.7.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>com.newtouch.lion-dsession</name>
-    <url>http://maven.apache.org</url>
+    <url>http://lion.newtouch.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -22,5 +22,51 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+            <artifactId>com.newtouch.lion-common</artifactId>
+            <version>${lion-common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+            <artifactId>com.newtouch.lion-redis</artifactId>
+            <version>${lion-redis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.newtouch.lion</groupId>
+            <artifactId>com.newtouch.lion-shiro</artifactId>
+            <version>1.7.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

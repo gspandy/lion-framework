@@ -55,7 +55,6 @@ public class DefaultEncoder implements Encoder {
 	 */
 	@Override
 	public Object decodeValue(Object value) {
-	 
 		return value;
 	}
 

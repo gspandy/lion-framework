@@ -59,20 +59,15 @@ public class SessionAttribute {
 	@SuppressWarnings("unused")
 	private boolean loaded = false;
 
-	/**
-	 * 创建一个attribute。
-	 * 
+	/***
+	 *
 	 * @param key
-	 *            key
-	 * @param session
-	 *            session
-	 * @param store
-	 *            store
+	 * @param distributedHttpSession
+	 * @param distributedSessionStore
 	 * @param encoder
-	 *            encoder
-	 */
+     */
 	public SessionAttribute(String key, DistributedHttpSession distributedHttpSession,
-			DistributedSessionStore distributedSessionStore, Encoder encoder) {
+							DistributedSessionStore distributedSessionStore, Encoder encoder) {
 		this.key = key;
 		this.distributedHttpSession = distributedHttpSession;
 		this.distributedSessionStore = distributedSessionStore;

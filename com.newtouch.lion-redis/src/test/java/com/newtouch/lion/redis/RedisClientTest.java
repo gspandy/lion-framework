@@ -37,7 +37,22 @@ public class RedisClientTest extends RedisAllTest {
         String key = "watchmem:20150410";
         String result=this.redisClient.set(key, "00000000");
         logger.info("result:{}",result);
+
+
+        Long  one=this.redisClient.incr("12345566");
     }
+
+
+
+    @Test
+    public void incr(){
+        Long  one=this.redisClient.incr("12345566");
+
+        logger.info("one:{}",one);
+
+    }
+
+
 
     @Test
     public void set1() {

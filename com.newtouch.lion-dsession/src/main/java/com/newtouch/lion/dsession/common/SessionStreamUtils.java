@@ -1,4 +1,8 @@
-package com.newtouch.lion.session.common;
+package com.newtouch.lion.dsession.common;
+
+import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -15,6 +19,9 @@ import java.io.ObjectOutputStream;
  * @author wanglijun
  */
 public class SessionStreamUtils {
+
+    /**日志*/
+    private static final Logger logger= LoggerFactory.getLogger(SessionStreamUtils.class);
 
     /**
      * 5000 constant
@@ -40,9 +47,9 @@ public class SessionStreamUtils {
         if (obj == null) {
             return null;
         }
-        ObjectOutputStream os = null;
+
         ByteArrayOutputStream byteStream = new ByteArrayOutputStream(FIVE);
-        os = new ObjectOutputStream(new BufferedOutputStream(byteStream));
+        ObjectOutputStream  os = new ObjectOutputStream(new BufferedOutputStream(byteStream));
         os.flush();
         os.writeObject(obj);
         os.flush();
@@ -58,20 +65,24 @@ public class SessionStreamUtils {
      * @return object
      * @throws IOException ioexception
      */
-    public static Object byteArrayToObject(byte[] bytes) throws IOException {
+    public static Object byteArrayToObject(byte[] bytes) {
         if (bytes == null || bytes.length <= 0) {
             return null;
         }
         Object obj = null;
+        ByteArrayInputStream bis=null;
+        ObjectInputStream ois=null;
         try {
-            ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
-            ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(bis));
-            obj = ois.readObject();
-            bis.close();
-            ois.close();
+              bis = new ByteArrayInputStream(bytes);
+              ois = new ObjectInputStream(new BufferedInputStream(bis));
+              obj = ois.readObject();
         } catch (ClassNotFoundException e) {
-            
-            e.printStackTrace();
+           logger.error(e.getMessage(),e);
+        } catch (IOException e) {
+           logger.error(e.getMessage(),e);
+        } finally{
+            IOUtils.closeQuietly(bis);
+            IOUtils.closeQuietly(ois);
         }
         return obj;
     }

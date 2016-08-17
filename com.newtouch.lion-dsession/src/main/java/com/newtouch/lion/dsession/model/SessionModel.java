@@ -4,15 +4,14 @@
 *
 * $id: Session.java 9552 2015年5月21日 下午2:06:15 WangLijun$
 */
-package com.newtouch.lion.dsession.model; 
-
-import java.io.Serializable;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package com.newtouch.lion.dsession.model;
 
 import com.newtouch.lion.dsession.DistributedHttpSession;
 import com.newtouch.lion.dsession.config.DistributedSessionConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.Serializable;
 
 /**
  * <p>
@@ -61,12 +60,12 @@ public class SessionModel  implements Serializable{
     /**
      * 创建时间
      */
-    private long creationTime;
+    private Long creationTime;
 
     /**
      * last access time
      */
-    private long lastAccessedTime;
+    private Long lastAccessedTime;
 
     /**
      * max inactive interval
@@ -80,18 +79,18 @@ public class SessionModel  implements Serializable{
     	 this.setDistributedHttpSession(distributedHttpSession);
     	 this.reset();
 	}
-    
-    
 
-	/**
-	 * @param distributedSessionConfig
+
+    /***
+	 *
+ 	 * @param distributedSessionConfig
 	 * @param sessionId
-	 * @param createdTime
+	 * @param creationTime
 	 * @param lastAccessedTime
 	 * @param maxInactiveInterval
-	 */
+     */
 	public SessionModel(DistributedSessionConfig distributedSessionConfig,
-			String sessionId, long creationTime, long lastAccessedTime,
+			String sessionId, Long creationTime, Long lastAccessedTime,
 			int maxInactiveInterval) {
 		this.distributedSessionConfig = distributedSessionConfig;
 		this.sessionId = sessionId;
@@ -137,7 +136,7 @@ public class SessionModel  implements Serializable{
     /**
      * 
      * 功能描述:设置model所在的session。 <br>
-     * @param session session
+     * @param distributedHttpSession session
      */
     public void setDistributedHttpSession(DistributedHttpSession distributedHttpSession) {
     	//TODO
@@ -190,7 +189,7 @@ public class SessionModel  implements Serializable{
 	/**
 	 * @return the creationTime
 	 */
-	public long getCreationTime() {
+	public Long  getCreationTime() {
 		return creationTime;
 	}
 

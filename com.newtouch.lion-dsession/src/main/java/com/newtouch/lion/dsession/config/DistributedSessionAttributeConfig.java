@@ -6,13 +6,12 @@
  */
 package com.newtouch.lion.dsession.config;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.springframework.util.StringUtils;
-
 import com.newtouch.lion.dsession.encoder.DefaultEncoder;
 import com.newtouch.lion.dsession.encoder.Encoder;
+import org.springframework.util.StringUtils;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <p>

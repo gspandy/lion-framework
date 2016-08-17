@@ -4,18 +4,17 @@
 *
 * $id: DefaultSessionStore.java 9552 2015年5月21日 下午2:33:06 WangLijun$
 */
-package com.newtouch.lion.dsession.store.impl; 
-
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package com.newtouch.lion.dsession.store.impl;
 
 import com.newtouch.lion.dsession.config.DistributedSessionAttributeConfig;
 import com.newtouch.lion.dsession.context.DistributedSessionContext;
 import com.newtouch.lion.dsession.store.DistributedSessionStore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.List;
 
 /**
  * <p>
@@ -34,7 +33,7 @@ import com.newtouch.lion.dsession.store.DistributedSessionStore;
  * @author WangLijun
  * @version 1.0
  */
-public class DefaultDistributedSessionStoreImpl  implements  DistributedSessionStore{
+public class DefaultDistributedSessionStoreImpl  implements DistributedSessionStore {
 	
 	/**日志*/
 	private static final Logger  logger=LoggerFactory.getLogger(DefaultDistributedSessionStoreImpl.class);
@@ -65,7 +64,7 @@ public class DefaultDistributedSessionStoreImpl  implements  DistributedSessionS
 	 * @see com.newtouch.lion.dsession.store.DistributedSessionStore#setAttribute(com.newtouch.lion.dsession.context.DistributedSessionContext, java.lang.String, java.lang.Object)
 	 */
 	@Override
-	public void setAttribute(DistributedSessionContext sessionContext,String key, Object value) {
+	public void setAttribute(DistributedSessionContext sessionContext, String key, Object value) {
 		logger.debug("Set-JVM:{}-{}",key,value);
 		sessionContext.getOriginalRequest().getSession().setAttribute(key, value);
 	}

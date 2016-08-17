@@ -4,14 +4,13 @@
 *
 * $id: CookieAttributeConfig.java 9552 2015年5月21日 下午2:40:22 WangLijun$
 */
-package com.newtouch.lion.dsession.config; 
+package com.newtouch.lion.dsession.config;
+
+import com.newtouch.lion.dsession.encoder.Encoder;
+import org.springframework.util.StringUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.springframework.util.StringUtils;
-
-import com.newtouch.lion.dsession.encoder.Encoder;
 
 /**
  * <p>
@@ -44,7 +43,7 @@ public class DistributedCookieAttributeConfig {
     /**
      * value的转换工具
      */
-    private Encoder encoder; 
+    private Encoder encoder;
     
     /**
      * domain

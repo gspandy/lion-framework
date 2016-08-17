@@ -4,12 +4,14 @@
 *
 * $id: SessionStore.java 9552 2015年5月21日 下午2:23:16 WangLijun$
 */
-package com.newtouch.lion.dsession.store; 
-
-import java.util.List;
+package com.newtouch.lion.dsession.store;
 
 import com.newtouch.lion.dsession.config.DistributedSessionAttributeConfig;
 import com.newtouch.lion.dsession.context.DistributedSessionContext;
+
+import java.util.List;
+
+
 /**
  * <p>
  * Title: Session存取操作
@@ -31,7 +33,7 @@ public interface DistributedSessionStore {
 	 /**
      * 
      * 功能描述:清除相关数据 <br>
-     * @param requestContext DistributedSessionContext
+     * @param sessionContext
      */
 	public void invalidate(DistributedSessionContext sessionContext);	
 	
@@ -40,7 +42,7 @@ public interface DistributedSessionStore {
     /**
      * 
      * 功能描述:getAttribute<br>
-     * @param requestContext DistributedSessionContext
+     * @param sessionContext
      * @param key key
      * @return Object
      */
@@ -50,7 +52,7 @@ public interface DistributedSessionStore {
     /**
      * 
      * 功能描述: setAttribute<br>
-     * @param requestContext DistributedSessionContext
+     * @param  sessionContext
      * @param key key
      * @param value value
      */
@@ -59,7 +61,7 @@ public interface DistributedSessionStore {
     /**
      * 
      * 功能描述: removeAttribute<br>
-     * @param requestContext DistributedSessionContext
+     * @param sessionContext
      * @param key key
      */
     void removeAttribute(DistributedSessionContext sessionContext, String key);
@@ -67,7 +69,7 @@ public interface DistributedSessionStore {
     /**
      * 
      * 功能描述: 只获取所有在config中配置的cookie的name<br>
-     * @param requestContext DistributedSessionContext
+     * @param sessionContext
      * @return list
      */
     List<String> getAllAttributeNames(DistributedSessionContext sessionContext);
@@ -77,7 +79,7 @@ public interface DistributedSessionStore {
      * 功能描述: getDistributedSessionAttributeConfig<br>
      * @return DistributedSessionAttributeConfig
      */
-    DistributedSessionAttributeConfig  getDistributedSessionAttributeConfig();
+    DistributedSessionAttributeConfig getDistributedSessionAttributeConfig();
 }
 
 	

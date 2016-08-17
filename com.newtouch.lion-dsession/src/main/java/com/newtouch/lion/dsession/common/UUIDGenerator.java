@@ -1,4 +1,4 @@
-package com.newtouch.lion.session.common;
+package com.newtouch.lion.dsession.common;
 
 import java.util.UUID;
 

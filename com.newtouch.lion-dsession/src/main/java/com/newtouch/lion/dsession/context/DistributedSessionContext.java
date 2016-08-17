@@ -36,7 +36,7 @@ public interface DistributedSessionContext extends DistributedRequestContext {
 	 * 获取SessionConfig信息
 	 * @return DistributedSessionConfig
 	 */
-	public DistributedSessionConfig  getDistributedSessionConfig();
+	public DistributedSessionConfig getDistributedSessionConfig();
 	/***
 	 * 获取CookieConfig信息
 	 * @return DistributedCookieConfig

@@ -6,10 +6,10 @@
 */
 package com.newtouch.lion.dsession.store; 
 
-import java.util.List;
-
 import com.newtouch.lion.dsession.config.DistributedCookieAttributeConfig;
 import com.newtouch.lion.dsession.context.DistributedSessionContext;
+
+import java.util.List;
 
 /**
  * <p>
@@ -73,7 +73,7 @@ public interface DistributedCookieStore {
     /**
      * 
      * 功能描述: getDistributedCookieAttributeConfig<br>
-     * @return s
+     * @return DistributedCookieAttributeConfig
      */
     DistributedCookieAttributeConfig getDistributedCookieAttributeConfig();
 }

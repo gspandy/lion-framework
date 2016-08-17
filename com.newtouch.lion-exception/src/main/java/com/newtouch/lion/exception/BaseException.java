@@ -39,7 +39,7 @@ public  class BaseException extends NestedRuntimeException {
  
 	/***
 	 * 代码消息为空
-	 * @param msg 错误代码
+	 * @param code 错误代码
 	 */
 	public BaseException(String code) {
 		super("");
@@ -89,9 +89,6 @@ public  class BaseException extends NestedRuntimeException {
 	public void setCode(String code) {
 		this.code = code;
 	}
-
-	
-	
 }
 
 	

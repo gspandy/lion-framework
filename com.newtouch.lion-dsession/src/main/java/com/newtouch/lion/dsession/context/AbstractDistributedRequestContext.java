@@ -6,11 +6,11 @@
  */
 package com.newtouch.lion.dsession.context;
 
+import org.springframework.util.Assert;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.util.Assert;
 
 /**
  * <p>

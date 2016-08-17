@@ -4,22 +4,21 @@
 *
 * $id: RedisDistributedSessionStore.java 9552 2015年6月15日 下午7:51:54 WangLijun$
 */
-package com.newtouch.lion.dsession.store.impl; 
+package com.newtouch.lion.dsession.store.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import com.newtouch.lion.dsession.config.DistributedSessionAttributeConfig;
+import com.newtouch.lion.dsession.context.DistributedSessionContext;
+import com.newtouch.lion.dsession.store.DistributedSessionStore;
+import com.newtouch.lion.redis.client.IBinaryRedisClient;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.newtouch.lion.dsession.config.DistributedSessionAttributeConfig;
-import com.newtouch.lion.dsession.context.DistributedSessionContext;
-import com.newtouch.lion.dsession.store.DistributedSessionStore;
-import com.newtouch.lion.redis.client.IBinaryRedisClient;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -38,14 +37,14 @@ import com.newtouch.lion.redis.client.IBinaryRedisClient;
  * @author WangLijun
  * @version 1.0
  */
-public class RedisDistributedSessionStoreImpl   implements DistributedSessionStore{
+public class RedisDistributedSessionStoreImpl   implements DistributedSessionStore {
 	/**
 	 * 日志
 	 */
 	private static final Logger logger = LoggerFactory.getLogger(RedisDistributedSessionStoreImpl.class);
 	
 	@Autowired
-	private DistributedSessionAttributeConfig  distributedSessionAttributeConfig;
+	private DistributedSessionAttributeConfig distributedSessionAttributeConfig;
 	
     /**
      * Redis client infterface
@@ -106,7 +105,7 @@ public class RedisDistributedSessionStoreImpl   implements DistributedSessionSto
 	 * @see com.newtouch.lion.dsession.store.DistributedSessionStore#getAttribute(com.newtouch.lion.dsession.context.DistributedRequestContext, java.lang.String)
 	 */
 	@Override
-	public Object getAttribute(DistributedSessionContext sessionContext,String key) {
+	public Object getAttribute(DistributedSessionContext sessionContext, String key) {
 		String id=sessionContext.getSessionId();
 		Object object=ObjectUtils.NULL;
 		if(StringUtils.isNotEmpty(id)){
@@ -124,7 +123,7 @@ public class RedisDistributedSessionStoreImpl   implements DistributedSessionSto
 	 * @see com.newtouch.lion.dsession.store.DistributedSessionStore#setAttribute(com.newtouch.lion.dsession.context.DistributedSessionContext, java.lang.String, java.lang.Object)
 	 */
 	@Override
-	public void setAttribute(DistributedSessionContext sessionContext,String key, Object value) {
+	public void setAttribute(DistributedSessionContext sessionContext, String key, Object value) {
 		String id=sessionContext.getSessionId();
 		if(StringUtils.isNotEmpty(id)){
 			this.binaryRedisClient.hsetObject(id, key, value);

@@ -23,6 +23,7 @@
         <module>com.newtouch.lion-monitor</module>
         <module>com.newtouch.lion-cache</module>
         <module>com.newtouch.lion-webtrans</module>
+        <module>com.newtouch.lion-dsession</module>
     </modules>
     <developers>
         <developer>

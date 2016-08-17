@@ -6,8 +6,6 @@
 */
 package com.newtouch.lion.web.shiro.model;
 
-import java.util.Date;
-
 /**
  * <p>
  * Title: 用户会话Model类型
@@ -33,11 +31,13 @@ public class SessionModel {
 	/**会话是否有效*/
 	private boolean valid;
 	/**会话超时时间*/
-	private long timeout;
+	private Long timeout;
+	/**会话创建时间*/
+	private Long creationTime;
 	/**最后访问的时间*/
-	private Date lastAccessTime;
+	private Long lastAccessTime;
 	/**会话开始时间*/
-	private Date startTimestamp;
+	private Long startTimestamp;
 	/**会话是否过期*/
 	private boolean expired;
 	/**用户名*/
@@ -110,28 +110,28 @@ public class SessionModel {
 	/**
 	 * @return 最后访问的时间
 	 */
-	public Date getLastAccessTime() {
+	public Long getLastAccessTime() {
 		return lastAccessTime;
 	}
 
 	/**
 	 * @param lastAccessTime 最后访问的时间
 	 */
-	public void setLastAccessTime(Date lastAccessTime) {
+	public void setLastAccessTime(Long lastAccessTime) {
 		this.lastAccessTime = lastAccessTime;
 	}
 
 	/**
 	 * @return 会话开始时间
 	 */
-	public Date getStartTimestamp() {
+	public Long getStartTimestamp() {
 		return startTimestamp;
 	}
 
 	/**
 	 * @param startTimestamp 会话开始时间
 	 */
-	public void setStartTimestamp(Date startTimestamp) {
+	public void setStartTimestamp(Long startTimestamp) {
 		this.startTimestamp = startTimestamp;
 	}
 
@@ -175,8 +175,19 @@ public class SessionModel {
 	 */
 	public void setUserId(Long userId) {
 		this.userId = userId;
-	} 
-	
+	}
+
+	public Long getCreationTime() {
+		return creationTime;
+	}
+
+	public void setCreationTime(Long creationTime) {
+		this.creationTime = creationTime;
+	}
+
+	public void setTimeout(Long timeout) {
+		this.timeout = timeout;
+	}
 }
 
 	

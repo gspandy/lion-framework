@@ -4,17 +4,15 @@
 *
 * $id: SessionConfig.java 9552 2015年5月21日 下午2:22:20 WangLijun$
 */
-package com.newtouch.lion.dsession.config; 
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpSessionListener;
+package com.newtouch.lion.dsession.config;
 
 import com.newtouch.lion.dsession.store.DistributedSessionStore;
 import com.newtouch.lion.dsession.store.impl.DefaultDistributedSessionStoreImpl;
- 
- 
+
+import javax.servlet.http.HttpSessionListener;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * <p>

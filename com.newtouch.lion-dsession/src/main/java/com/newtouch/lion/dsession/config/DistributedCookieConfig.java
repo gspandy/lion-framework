@@ -4,12 +4,12 @@
 *
 * $id: CookieConfig.java 9552 2015年5月21日 下午2:39:34 WangLijun$
 */
-package com.newtouch.lion.dsession.config; 
+package com.newtouch.lion.dsession.config;
+
+import com.newtouch.lion.dsession.store.DistributedCookieStore;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.newtouch.lion.dsession.store.DistributedCookieStore;
 
 
 /**

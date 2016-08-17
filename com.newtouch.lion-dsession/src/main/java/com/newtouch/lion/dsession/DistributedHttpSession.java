@@ -6,24 +6,6 @@
  */
 package com.newtouch.lion.dsession;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.servlet.ServletContext;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionContext;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.util.CollectionUtils;
-
 import com.newtouch.lion.common.Assert;
 import com.newtouch.lion.dsession.config.DistributedSessionConfig;
 import com.newtouch.lion.dsession.constant.SessionConstant;
@@ -32,7 +14,16 @@ import com.newtouch.lion.dsession.model.SessionAttribute;
 import com.newtouch.lion.dsession.model.SessionModel;
 import com.newtouch.lion.dsession.store.DistributedSessionStore;
 import com.newtouch.lion.dsession.util.DistributedContextUtil;
- 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.CollectionUtils;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
+import java.util.*;
+
 
 /**
  * <p>
@@ -51,7 +42,6 @@ import com.newtouch.lion.dsession.util.DistributedContextUtil;
  * @author WangLijun
  * @version 1.0
  */
-@SuppressWarnings("deprecation")
 public class DistributedHttpSession implements HttpSession {
 	/***
 	 * 日志
@@ -97,7 +87,7 @@ public class DistributedHttpSession implements HttpSession {
 	 * @param isNew
 	 * @param distributedSessionContext
 	 */
-	public DistributedHttpSession(String sessionId,DistributedSessionContext distributedSessionContext, boolean isNew) {
+	public DistributedHttpSession(String sessionId, DistributedSessionContext distributedSessionContext, boolean isNew) {
 		Assert.notNull(distributedSessionContext);
 		this.sessionId = sessionId;
 		this.isNew = isNew;
@@ -112,17 +102,17 @@ public class DistributedHttpSession implements HttpSession {
 			//Request sessionId不为空的，但是model不存在（会话过程中新的请求）
 			//获取 Cookie中的session的创建时间和上次访问时间，若取不到则直接当前时间；
 			List<String> keys=new ArrayList<String>();
-			keys.add(SessionConstant.CREATE_TIME);
-			keys.add(SessionConstant.LASTACCESS_TIME);
+			keys.add(SessionConstant.CREATION_TIME);
+			keys.add(SessionConstant.LAST_ACCESSED_TIME);
 			
-			Map<String,Cookie> keyCookies=DistributedContextUtil.getCookiesFromCookie(this.distributedSessionContext, keys);
+			Map<String,Cookie> keyCookies= DistributedContextUtil.getCookiesFromCookie(this.distributedSessionContext, keys);
 			if(!CollectionUtils.isEmpty(keyCookies)){
-				logger.info("{}={}",SessionConstant.CREATE_TIME,keyCookies.get(SessionConstant.CREATE_TIME));
-				logger.info("{}={}",SessionConstant.LASTACCESS_TIME,keyCookies.get(SessionConstant.LASTACCESS_TIME));
-				if(keyCookies.get(SessionConstant.CREATE_TIME)!=null&&keyCookies.get(SessionConstant.LASTACCESS_TIME)!=null){
+				logger.info("{}={}",SessionConstant.CREATION_TIME,keyCookies.get(SessionConstant.CREATION_TIME));
+				logger.info("{}={}",SessionConstant.LAST_ACCESSED_TIME,keyCookies.get(SessionConstant.LAST_ACCESSED_TIME));
+				if(keyCookies.get(SessionConstant.CREATION_TIME)!=null&&keyCookies.get(SessionConstant.LAST_ACCESSED_TIME)!=null){
 					logger.info("update session {} using cookie value.",this.sessionId);
-					creationTime=Long.valueOf(keyCookies.get(SessionConstant.CREATE_TIME).getValue());
-					lastAccessedTime=Long.valueOf(keyCookies.get(SessionConstant.LASTACCESS_TIME).getValue());
+					creationTime=Long.valueOf(keyCookies.get(SessionConstant.CREATION_TIME).getValue());
+					lastAccessedTime=Long.valueOf(keyCookies.get(SessionConstant.LAST_ACCESSED_TIME).getValue());
 				}else{
 					logger.info("update createdTime and  lastAccessedTime to current time.");
 					creationTime=System.currentTimeMillis();
@@ -304,8 +294,8 @@ public class DistributedHttpSession implements HttpSession {
 			model.reset();
 		}
 		
-		DistributedContextUtil.writeKeyValueToCookie(this.distributedSessionContext,SessionConstant.CREATE_TIME, String.valueOf(model.getCreationTime()));
-		DistributedContextUtil.writeKeyValueToCookie(this.distributedSessionContext,SessionConstant.LASTACCESS_TIME, String.valueOf(model.getLastAccessedTime()));
+		DistributedContextUtil.writeKeyValueToCookie(this.distributedSessionContext,SessionConstant.CREATION_TIME, String.valueOf(model.getCreationTime()));
+		DistributedContextUtil.writeKeyValueToCookie(this.distributedSessionContext,SessionConstant.LAST_ACCESSED_TIME, String.valueOf(model.getLastAccessedTime()));
 		this.invalidated=invalidate;
 	}
 

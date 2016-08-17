@@ -32,7 +32,7 @@ public interface Encoder {
 	
 	/***
 	 * 对key进行解码
-	 * @param name
+	 * @param key
 	 * @return
 	 */
 	public String decodeName(String key);

@@ -71,6 +71,169 @@ public class RedisClientImpl extends DefaultClientImpl implements RedisClient{
         return this.shardedJedis.getShard(key).execute(callBack);
     }
 
+
+    /**
+     * 功能描述： 批量获取数据
+     *
+     * @param keys 指定的key
+     * @return 数据集合
+     */
+    @Override
+    public List<String> mget(String... keys) {
+        return null;
+    }
+
+    /****
+     * 功能描述：push
+     *
+     * @param key    指定的key
+     * @param fields 被插入的元素
+     * @return Long 被成功插入的个数
+     */
+    @Override
+    public Long push(String key, String... fields) {
+        return null;
+    }
+
+    /**
+     * 功能描述： 批量set数据
+     *
+     * @param keyValues 键值对
+     * @return set成功与否的状态码
+     */
+    @Override
+    public String mset(Map<String, String> keyValues) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求多个集合的交集
+     *
+     * @param keys 指定的集合
+     * @return 交集的集合，不存在时为空
+     */
+    @Override
+    public Set<String> sinter(String... keys) {
+        return null;
+    }
+
+    /**
+     * 功能描述: 求多个集合的交集，并把结果存在dstkey中，dstkey已存在则覆盖
+     *
+     * @param dstkey 结果集
+     * @param keys   目标集
+     * @return 结果集中的成员数量。
+     */
+    @Override
+    public Long sinterstore(String dstkey, String... keys) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求多个集合的并集
+     *
+     * @param keys 目标集
+     * @return 并集的集合，不存在时为空
+     */
+    @Override
+    public Set<String> sunion(String... keys) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求多个集合的并集，并把结果存在dstkey中，dstkey已存在则覆盖
+     *
+     * @param dstkey 结果及
+     * @param keys   目标集
+     * @return 结果集中的成员数量。
+     */
+    @Override
+    public Long sunionstore(String dstkey, String... keys) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求参数里第一个set与其他set的差集
+     *
+     * @param keys 目标集
+     * @return 差集的集合，不存在时为空
+     */
+    @Override
+    public Set<String> sdiff(String... keys) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求参数里第一个set与其他set的差集，并把结果存在dstkey中，dstkey已存在则覆盖
+     *
+     * @param dstkey 结果集
+     * @param keys   目标集
+     * @return 结果集中的成员数量。
+     */
+    @Override
+    public Long sdiffstore(String dstkey, String... keys) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求多个有序集合的交集，并把结果存在dstkey中，dstkey已存在则覆盖 score值默认按照权重为1，累加。
+     *
+     * @param dstkey 结果集
+     * @param sets   目标集
+     * @return 结果集中的成员数量。
+     */
+    @Override
+    public Long zinterstore(String dstkey, String... sets) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求多个有序集合的交集，并把结果存在dstkey中，dstkey已存在则覆盖 score值按照params参数中设置的权重和算法计算
+     *
+     * @param dstkey 结果集
+     * @param params 权重和算法参数
+     * @param sets   目标集
+     * @return 结果集中的成员数量
+     */
+    @Override
+    public Long zinterstore(String dstkey, ZParams params, String... sets) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求多个有序集合的并集，并把结果存在dstkey中，dstkey已存在则覆盖 score值默认按照权重为1，累加。
+     *
+     * @param dstkey 结果集
+     * @param sets   目标集
+     * @return 结果集中的成员数量。
+     */
+    @Override
+    public Long zunionstore(String dstkey, String... sets) {
+        return null;
+    }
+
+    /**
+     * 功能描述: <br>
+     * 求多个有序集合的并集，并把结果存在dstkey中，dstkey已存在则覆盖 score值按照params参数中设置的权重和算法计算
+     *
+     * @param dstkey 结果集
+     * @param params 权重和算法参数
+     * @param sets   目标集
+     * @return 结果集中的成员数量。
+     */
+    @Override
+    public Long zunionstore(String dstkey, ZParams params, String... sets) {
+        return null;
+    }
+
     @Override
     public void clearDisableFlags() {
         super.clearDisableFlags();
