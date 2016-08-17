@@ -34,41 +34,41 @@ public interface DistributedRequestContext {
      * 
      * @return 被包装的<code>DistributedContext</code>对象
      */
-	public DistributedRequestContext getDdistributedContext();
+	 DistributedRequestContext getDdistributedContext();
 	 /**
      * 取得servletContext对象。
      * 
      * @return <code>ServletContext</code>对象
      */
-    public ServletContext  getServletContext();
+     ServletContext  getServletContext();
 
     /**
      * 取得request对象。
      * 
      * @return <code>HttpServletRequest</code>对象
      */
-    public HttpServletRequest getRequest();
+     HttpServletRequest getRequest();
 
     /**
      * 取得response对象。
      * 
      * @return <code>HttpServletResponse</code>对象
      */
-    public HttpServletResponse getResponse();
+     HttpServletResponse getResponse();
     
     /**
      * 取得request对象。
      * 
      * @return <code>HttpServletRequest</code>对象
      */
-    public HttpServletRequest getOriginalRequest();
+     HttpServletRequest getOriginalRequest();
 
     /**
      * 取得response对象。
      * 
      * @return <code>HttpServletResponse</code>对象
      */
-    public HttpServletResponse getOriginalResponse();
+     HttpServletResponse getOriginalResponse();
 
 }
 

@@ -4,30 +4,23 @@
 *
 * $id: DistributedSessionFilter.java 9552 2015年6月11日 上午10:53:53 WangLijun$
 */
-package com.newtouch.lion.dsession.filter; 
+package com.newtouch.lion.dsession.filter;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.newtouch.lion.dsession.config.DistributedCookieConfig;
+import com.newtouch.lion.dsession.config.DistributedSessionConfig;
+import com.newtouch.lion.dsession.constant.SessionConstant;
+import com.newtouch.lion.dsession.context.DefaultDistributedSessionContext;
+import com.newtouch.lion.dsession.util.DistributedContextUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import com.newtouch.lion.dsession.config.DistributedCookieConfig;
-import com.newtouch.lion.dsession.config.DistributedSessionConfig;
-import com.newtouch.lion.dsession.context.DefaultDistributedSessionContext;
-import com.newtouch.lion.dsession.util.DistributedContextUtil;
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * <p>
@@ -82,7 +75,7 @@ public class DistributedSessionFilter  implements Filter{
         } else {
         	DefaultDistributedSessionContext distributedSessionContext = new DefaultDistributedSessionContext(servletContext, request,response, sessionConfig, distributedCookieConfig);
             // 跟新session的上次访问时间
-        	DistributedContextUtil.writeKeyValueToCookie(distributedSessionContext,SessionConstant.LAST_ACCESSED_TIME,String.valueOf(System.currentTimeMillis()));
+        	DistributedContextUtil.writeKeyValueToCookie(distributedSessionContext, SessionConstant.LAST_ACCESSED_TIME,String.valueOf(System.currentTimeMillis()));
             chain.doFilter(distributedSessionContext.getRequest(), distributedSessionContext.getResponse());
         }
 	}

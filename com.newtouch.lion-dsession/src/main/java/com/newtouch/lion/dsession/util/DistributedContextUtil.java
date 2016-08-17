@@ -7,6 +7,7 @@
 package com.newtouch.lion.dsession.util;
 
 import com.newtouch.lion.dsession.config.DistributedCookieAttributeConfig;
+import com.newtouch.lion.dsession.constant.SessionConstant;
 import com.newtouch.lion.dsession.context.DefaultDistributedSessionContext;
 import com.newtouch.lion.dsession.context.DistributedRequestContext;
 import com.newtouch.lion.dsession.context.DistributedSessionContext;

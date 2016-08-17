@@ -9,7 +9,7 @@ package com.newtouch.lion.dsession.store.impl;
 import com.newtouch.lion.dsession.config.DistributedSessionAttributeConfig;
 import com.newtouch.lion.dsession.context.DistributedSessionContext;
 import com.newtouch.lion.dsession.store.DistributedSessionStore;
-import com.newtouch.lion.redis.client.IBinaryRedisClient;
+import com.newtouch.lion.redis.client.BinaryRedisClient;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
@@ -50,7 +50,7 @@ public class RedisDistributedSessionStoreImpl   implements DistributedSessionSto
      * Redis client infterface
      * */
 	@Autowired
-	private IBinaryRedisClient binaryRedisClient;
+	private BinaryRedisClient binaryRedisClient;
 
 	/**会话保持时间，单位，秒*/
 	private int maxInactiveInterval;
